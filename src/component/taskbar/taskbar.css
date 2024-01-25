@@ -1,0 +1,19 @@
+.Taskbar {
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    padding-left: 40%;
+  }
+  
+  .Taskbar-list {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Taskbar-list li {
+    display: inline;
+    margin-right: 20px;
+    cursor: pointer;
+  }

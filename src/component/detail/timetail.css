@@ -1,0 +1,108 @@
+.timetailpage{
+    text-align: center;
+}
+.buto1{
+    margin-right: 60px;
+    border: none;
+    background-color: white;
+    padding: 20px;
+}
+.buto1:hover{
+    cursor: pointer;
+}
+.baidang{
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.baidang1{
+    padding: 1px;
+}
+.baidang11{
+    height: 344px;
+    width: 100%;
+    position: relative;
+  display: inline-block;
+
+}
+.baidang11{
+    cursor: pointer;
+}
+.baidangg{
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.baidangg1{
+    padding: 2px;
+}
+.baidangg11{
+    position: relative;
+}
+.baidangg11:hover{
+    cursor: pointer;
+}
+.reelview{
+    position: absolute;
+  bottom: 0;
+  left: 22px;
+  margin: 0;
+  padding: 8px;
+  color: white;
+}
+.reelicon{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 8px;
+    color: white;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .baidang11:hover .overlay {
+    opacity: 1;
+  }
+  .baidangg11:hover .overlay {
+    opacity: 1;
+  }
+  .caption {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .like{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    margin-right: 30px;
+  }
+  .cmt{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+  }
+  .icontym{
+    margin-top: 20px;
+    margin-right: 3px;
+  }
+  .buto1.active {
+    color: black;
+    font-weight: bolder;
+  }

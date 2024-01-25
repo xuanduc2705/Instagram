@@ -1,0 +1,33 @@
+.videolist{
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+   width: 450px;
+   padding: 20px;
+}
+.video{
+    border-radius: 10px;
+    margin-bottom: 50px;
+    height: 680px;
+    position: relative;
+  display: inline-block;
+}
+.videoanh{
+    border-radius: 15px;
+width: 90%;
+height: 100%;
+object-fit: cover;
+}
+  .gocduoi {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+ /* Additional styles for the 'gocduoi' div */
+  }
+  .tenreel{
+    display: flex;
+    flex-direction: row;
+  }
+  .tentaikhoan{
+    color: white
+  }

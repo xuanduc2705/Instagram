@@ -1,0 +1,14 @@
+.reelslist{
+    padding-left: 140px;
+    padding-top: 30px;
+    padding-right: 140px;
+    border-left: 1px solid lightgray;
+}
+.explore{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.baidanggreel{
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+}

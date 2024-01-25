@@ -1,0 +1,38 @@
+.relationn{
+    color: grey;
+    font-size: 18px;
+}
+.hero{
+    width: 100%;
+}
+.profile{
+    margin-top: 50px;
+    width: 370px;
+    margin-left: 80px;
+}
+.pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profileinfo{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.file{
+    display: flex;
+    flex-direction: row;
+}
+.hero:hover{
+    cursor: pointer;
+}
+.usernamee{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.usernamee:hover{
+    cursor: pointer;
+}
+

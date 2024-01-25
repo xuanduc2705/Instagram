@@ -1,0 +1,78 @@
+.time{
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid grey;
+}
+.story{
+    margin: 30px 40px 10px 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+.timeline_left{
+    width: 710px;
+    flex: 0.7;
+}
+.timeline_right{
+    width: 400px;
+    flex: 0.3;
+}
+
+.story_left {
+    margin-left: 35px;
+    position: relative;
+  }
+  
+  .story_left:hover .nextIcon {
+    opacity: 1;
+    background-color: aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .nextIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+    opacity: 0;
+    font-size: 24px;
+  }
+  .relationn{
+    color: grey;
+    font-size: 18px;
+}
+.hero{
+    width: 100%;
+}
+.profile{
+    margin-top: 50px;
+    width: 370px;
+    margin-left: 80px;
+}
+.pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profileinfo{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.file{
+    display: flex;
+    flex-direction: row;
+}
+.hero:hover{
+    cursor: pointer;
+}
+.usernamee{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.usernamee:hover{
+    cursor: pointer;
+}

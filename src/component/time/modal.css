@@ -1,0 +1,127 @@
+.modalBackground {
+    width: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 200px;
+  }
+  
+  .modalContainer {
+    width: 50%;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid lightgrey;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+  .thongtin{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+  .Switch{
+   margin:0 auto;
+   font-size: 18px;
+   font-weight: 600;
+  }
+  .avatt{
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+    margin-bottom: 60px;
+  }
+  
+  .heror>img{
+    width: 100%;
+}
+.usernameee{
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    position: relative;
+}
+.checkicon{
+    margin-left: 150px;
+}
+.usernameeee{
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    color: blue;
+    
+}
+.modal {
+    /* Styles for the modal */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(1px);
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 999;
+  }
+
+  

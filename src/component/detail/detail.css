@@ -1,0 +1,19 @@
+.detailpage{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.time_tail{
+    width: 85%;
+    margin: 0 auto;
+}
+.time_tail>img{
+    width: 100%;
+}
+.time_story{
+    justify-content: center;
+    margin-left: 36px;
+}
+.time_tail2{
+    margin-top: 40px;
+    border-top: 1px solid lightgrey;
+}
