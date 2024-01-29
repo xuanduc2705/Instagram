@@ -80,10 +80,13 @@ function Nav({ explore,reels}) {
   return (
     <>
     <div className={`Nav ${isNavVisible ? '' : 'hide-nav'}`}>
-        <img className='nav_logo' 
+    <Link to='/home' >
+    <img className='nav_logo' 
         src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png' 
         alt=''
         />
+    </Link>
+        
         <div className='nav_buttons'>
               <Link to='/home' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button'>
