@@ -8,6 +8,7 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import '../reels/reels.css'
 import { Avatar } from "@mui/material";
 import { reel } from "../../data/reelsdata";
+import { FaMusic } from "react-icons/fa";
 function Reels(){
 return(
 <div className="explore">
@@ -30,11 +31,28 @@ return(
                 <div className="gocduoi">
                     <div className="tenreel">
                     <Avatar>
-                        <img src={post.src}/>
+                        <img src={post.avatar} style={{width:'100%'}}/>
                     </Avatar>
-                    <span className="tentaikhoan">
+                    <div className="tentaikhoan">
+                    <span className="tennick">
                         {post.name}
                     </span>
+                    <li></li>
+                    <button className="followbutton">
+                      Follow
+                    </button>
+                    </div>
+                    </div>
+                    <div className="contentreel">
+                      {post.content}
+                    </div>
+                    <div className="musicreel">
+                      <FaMusic className="musicicon"/>
+                      {post.music}
+                      <li style={{fontSize:'8px',marginTop:'6px',marginLeft:'6px'}}></li>
+                      <span>
+                        Original audio
+                      </span>
                     </div>
                     
                 </div>

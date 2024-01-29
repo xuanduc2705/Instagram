@@ -65,22 +65,17 @@ const [commentText, setCommentText] = useState('');
   const handleCommentSubmit = () => {
     const token = getTokenFromSessionStorage();
     if (token) {
-      // User has the token, allow comment submission
-      // Implement your logic to submit the comment here
       if(commentText !==''){
         const newComment = {
-          author: 's.pinkduck_03', // Replace with the actual author name
+          author: 's.pinkduck_03', 
           text: commentText,
         };
     
-        // Call the onAddComment function to add the new comment
         onAddComment(newComment);
     
-        // Clear the input field
         setCommentText('');
       }
     } else {
-      // No token, navigate to the login page
       navigate('/login');
     }
     

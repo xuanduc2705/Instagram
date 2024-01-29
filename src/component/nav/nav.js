@@ -19,17 +19,19 @@ import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TbBrandMessenger } from "react-icons/tb";
 import SlideshowTwoToneIcon from '@mui/icons-material/SlideshowTwoTone';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function Nav({ explore,reels}) {
+
   const [ten,setTens] = useState([{
     stoava:'https://i.ibb.co/qkhmRLp/418758070-2278354819026761-6414880944565960628-n.jpg',
     name:'hathu_87',
     fullname:'Pham Thu Ha'
   },
   {
-    stoava:'https://image.viettimes.vn/1200x630/Uploaded/2024/livospwi/2020_07_03/chipu-910143_372020.jpg',
-    name:'chipupu',
-    fullname:'ChiPu'
+    stoava:'https://scontent.fhan17-1.fna.fbcdn.net/v/t1.6435-9/177549202_320774429402765_4463919220949422685_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeGDmc0saVSUmf0AXUm77tjZcfAnf2O5bX1x8Cd_Y7ltfYj9vqtg0P2s6p3pOdP0mjxwbgBGuMURUFRHrpdWCseT&_nc_ohc=zS7IXsaXazQAX-gdvxW&_nc_ht=scontent.fhan17-1.fna&oh=00_AfB9MX7giHeCewTjwAjiYo8iCCYIZ5rLxXkkYOUDl5Y4LQ&oe=65D05C38',
+    name:'chuyencuahanoi.official',
+    fullname:'Chuyen cua Ha Noi'
   },
   {
     stoava:'https://yt3.googleusercontent.com/mm2-5anuZ6ghmK2zL6QM7wciD6kuupOfOagiAh5vZE1hx9tRhKEXTAExZUUY4PVq2RSw9jBpBQ=s900-c-k-c0x00ffffff-no-rj',
@@ -59,16 +61,25 @@ function Nav({ explore,reels}) {
   const inputRef = useRef(null);
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [showAnotherNav, setShowAnotherNav] = useState(false);
+  const [showAnotherNavi, setShowAnotherNavi] = useState(false);
   const [query, setQuery] = useState("");
 
   const handleSearchClick = () => {
     setIsNavVisible(false);
     setShowAnotherNav(true);
   };
+  const handleNofiClick = () => {
+    setIsNavVisible(false);
+    setShowAnotherNavi(true);
+  };
 
   const handleNavClose = () => {
     setIsNavVisible(true);
     setShowAnotherNav(false);
+  };
+  const handleNofiClose = () => {
+    setIsNavVisible(true);
+    setShowAnotherNavi(false);
   };
   const handleCancelClick = () => {
     setQuery("");
@@ -124,13 +135,13 @@ function Nav({ explore,reels}) {
               )}
                 
               </Link>
-              
+              <Link to='/message' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button'>
               <TbBrandMessenger className='messicon' /> 
               <span className='spann'>Messages</span>
             </button>
-              
-            <button className='sidenav_button'>
+            </Link>
+            <button className='sidenav_button' onClick={handleNofiClick}>
               <FavoriteBorderIcon/>
               <span className='spann'>Notifications</span>
             </button>
@@ -153,16 +164,18 @@ function Nav({ explore,reels}) {
           <div className='AnotherNav'>
           
         <div className="bentraii">
+    <Link to='/home' >
         <div className='nav_logo' style={{width:'50px'}}>
-          <InstagramIcon style={{fontSize:'25px',marginLeft:'11px'}}/>
+          <InstagramIcon style={{fontSize:'25px'}} className='igicon'/>
         </div>
+        </Link>
         <div className='nav_buttons' style={{marginTop:'43px',marginLeft:'10px'}}>
               <Link to='/home' className='buts' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button2' onClick={handleNavClose}>
               <HomeOutlinedIcon style={{fontSize:'27px'}} />
             </button>
             </Link>
-            <button className='sidenav_button2'onClick={handleNavClose} style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'13px'}}>
+            <button className='sidenav_button2'onClick={handleNavClose} style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
               <SearchIcon className='buts' />
             </button>
             <button className='sidenav_button2'>
@@ -171,11 +184,11 @@ function Nav({ explore,reels}) {
             <button className='sidenav_button2'>
               <SlideshowIcon className='buts'/>
             </button>
-              
+            <Link to='/message' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button2'>
               <ChatIcon className='buts'/>
             </button>
-              
+              </Link>
             <button className='sidenav_button2'>
               <FavoriteBorderIcon className='buts'/>
             </button>
@@ -233,6 +246,83 @@ function Nav({ explore,reels}) {
               <span>No recent searches.</span>
           </div>
             )}
+          
+        </div>
+        </div>
+        
+          </div>
+        </div>
+      )}
+      {showAnotherNavi && (
+        <div className='slide-in-nav'>
+          <div className='AnotherNav'>
+          
+        <div className="bentraii">
+        <Link to='/home' >
+        <div className='nav_logo' style={{width:'50px'}} >
+          <InstagramIcon style={{fontSize:'25px'}} className='igicon' />
+        </div>
+        </Link>
+        <div className='nav_buttons' style={{marginTop:'43px',marginLeft:'10px'}}>
+              <Link to='/home' className='buts' style={{ textDecoration: 'none' }}>
+            <button className='sidenav_button2' onClick={handleNofiClose}>
+              <HomeOutlinedIcon style={{fontSize:'27px'}} />
+            </button>
+            </Link>
+            <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
+              <SearchIcon className='buts' />
+            </button>
+            <button className='sidenav_button2'>
+            <ExploreOutlinedIcon className='buts' />
+            </button>   
+            <button className='sidenav_button2'>
+              <SlideshowIcon className='buts'/>
+            </button>
+            <Link to='/message' style={{ textDecoration: 'none' }}>
+            <button className='sidenav_button2'>
+            <TbBrandMessenger className='messicon' /> 
+            </button>
+              </Link>
+            <button className='sidenav_button2' onClick={handleNofiClose}>
+              <FavoriteIcon className='buts'/>
+            </button>
+            <button className='sidenav_button2'>
+              <AddCircleOutlineIcon className='buts'/>
+            </button>
+            <div className='sidenav_more'>
+            <button className='sidenav_button2' >
+              <MenuIcon className='buts'/>
+            </button>
+            </div>
+            
+        </div>
+        </div>
+        <div className='benphai'>
+          <div className="benphaitren" style={{paddingTop:'20px',display:'flex',flexDirection:'column'}}>
+            <span className='nofi' style={{fontWeight:'bolder',fontSize:'25px',marginBottom:'20px'}}>Notifications</span>
+            <div className="ttreq">
+            <Avatar >
+              <img
+              src='https://imageio.forbes.com/specials-images/imageserve/5c76b7d331358e35dd2773a9/0x0.jpg?format=jpg&crop=4401,4401,x0,y0,safe&height=416&width=416&fit=bounds'
+              alt=''
+              style={{width:'100%'}}
+              />
+            </Avatar>
+            <div className="tongtineq">
+            <span className="reqtt">
+              Follow Request
+            </span>
+            <span className='mark'>
+              Mark Zuckerberg
+            </span>
+            </div>
+            
+            </div>
+            
+            
+          </div>
+          <div className="benphaiduoi">
+            <h1>Hi</h1>
           
         </div>
         </div>

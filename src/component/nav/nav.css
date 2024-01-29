@@ -1,6 +1,6 @@
 .nav_logo{
     width: 120px;
-    margin: 25px;
+    margin: 20px;
 }
 
 .Nav{
@@ -32,7 +32,7 @@
     align-items: center;
     background: 0;
     border: 0;
-    margin: 5px 10px 10px 10px;
+    margin: 5px 10px 10px 0px;
     padding: 10px 10px 10px 10px;
     border-radius: 15px;
     width: 100%;
@@ -104,6 +104,7 @@
     height: 1400px;
   }
   .bentraii{
+    width: 70px;
     height: 100%;
   }
   .benphaitren{
@@ -187,4 +188,37 @@
   .messicon{
     font-size: 23px;
   }
+  .nofi{
+    margin-bottom: 20px;
 
+  }
+  .ttreq{
+    width: 350px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  .ttreq:hover{
+    border-radius: 10px;
+    background-color: lightgray;
+  }
+  .reqtt{
+    
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tongtineq{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mark{
+    color: gray;
+    font-size: 14px;
+  }
+  .igicon{
+    cursor: pointer;
+  }
+  .igicon:hover{
+    transform: scale(1.2);
+  }

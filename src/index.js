@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import Login from './component/login/login.js';
 import Explore from './component/explore/explore.js';
 import Reels from './component/reels/reels.js';
+import Message from './component/message/message.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
     <Route path='/login' element={<Login/>}/>
     <Route path='/explore' element={<Explore/>}></Route>
     <Route path='/reels' element={<Reels/>}></Route>
+    <Route path='/message' element={<Message/>}></Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

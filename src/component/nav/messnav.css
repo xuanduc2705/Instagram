@@ -1,0 +1,8 @@
+.messnav{
+    display: flex;
+    flex-direction: row;
+}
+.benphaimess{
+    height: 800px;
+    border-left: 1px solid lightgray;
+}
