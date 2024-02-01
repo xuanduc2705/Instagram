@@ -312,7 +312,7 @@ function Nav({ explore,reels}) {
             <span className="reqtt">
               Follow Request
             </span>
-            <span className='mark'>
+            <span className='markk'>
               Mark Zuckerberg
             </span>
             </div>

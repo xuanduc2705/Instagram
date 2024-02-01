@@ -249,12 +249,10 @@
     color: #0073cf;
     font-weight: 700;
     cursor: pointer;
+    display: inline-block;
   }
   .submit-button:hover{
     color: #00bfff;
   }
   
-  .comment-input:focus-within .submit-button {
-    display: inline-block;
-  }
   

@@ -5,6 +5,7 @@ import '../login/login.css'
 import { FaFacebookSquare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { saveTokenToSessionStorage } from "../Util/storageUtil";
+import { red } from "@mui/material/colors";
 
 function redirectG(){
     window.location.href = "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D30DCB500-F0B0-4E1D-A3EB-4FF738793965%26utm_campaign%3DloginPage%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge%26original_referrer%3Dhttps%3A%2F%2Fcoccoc.com%2Fsearch%3Fquery%3DInstagram";
@@ -19,19 +20,26 @@ function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
+    const [showError,setShowError] = useState(true)
     const handleLogin = async () => {
-        
-      let res = await loginApi(email, password);
-
-      console.log(">>check res:", res);
-      if (res.status===400) {
-        toast.error(res.data.error);
-        navigate("/login")
-      }else
-      saveTokenToSessionStorage(res.data.token);
-      navigate("/home");
-     
-    };
+        try {
+          let res = await loginApi(email, password);
+      
+          console.log(">>check res:", res);
+          console.log(res.data.error);
+      
+          if (res.data.status == 400) {
+            navigate("/login");
+          } else {
+            setShowError(true)
+            saveTokenToSessionStorage(res.data.token);
+            navigate("/home");
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+          setShowError(false)
+        }
+      };
 return(
     <div className="Login">
     <div className="loginbody">
@@ -53,6 +61,12 @@ return(
         placeholder="Phone number,username, or email"
         value={email}
         onChange={(event)=>setEmail(event.target.value)}/>
+            {showError? (
+                <div></div>
+            ):(
+                <p style={{color:'red',fontSize:'10px',marginLeft:"50px"}}>Wrong username!</p>
+            )
+            }
         <input 
         type="password" 
         className="usernam" 

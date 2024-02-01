@@ -41,7 +41,7 @@ const handleFavoriteClick = () => {
 };
 const [isHovered, setIsHovered] = useState(false);
 const [isHoveredr, setIsHoveredr] = useState(false);
-
+const [showPost,setShowPost] = useState(false);
 const handleMouseEnter = () => {
   setIsHovered(true);
 };
@@ -59,7 +59,9 @@ const handleMouseLeaver = () => {
 const [commentText, setCommentText] = useState('');
 
   const handleCommentInputChange = (event) => {
-    setCommentText(event.target.value);
+    const inputValue = event.target.value;
+    setCommentText(inputValue);
+    setShowPost(inputValue.length > 0);
   };
 
   const handleCommentSubmit = () => {
@@ -157,20 +159,22 @@ const [commentText, setCommentText] = useState('');
                 {isFavoriteClicked ? (
                 <FavoriteIcon
                 className='postIconss'
+                style={{fontSize:"40px"}}
                 onClick={handleFavoriteClick}
                  />
                 ) : (
                 <FavoriteBorderIcon
                 className='postIcons'
+                style={{fontSize:"40px"}}
                 onClick={handleFavoriteClick}
                 />
                 )}
 
-                <ChatBubbleOutlineIcon className='postIcons'/>
-                <TelegramIcon className='postIcons'/>
+                <ChatBubbleOutlineIcon className='postIcons'style={{fontSize:"40px"}}/>
+                <TelegramIcon className='postIcons' style={{fontSize:"40px"}}/>
                 </div>
                 <div className='post_iconSave'>
-                    <BookmarkIcon className='postIcons'/>
+                    <BookmarkIcon className='postIcons'style={{fontSize:"40px"}}/>
                 </div>
             </div>
             <span className='like' style={{fontSize:'14px'}}>{likeCount} likes</span>
@@ -257,7 +261,12 @@ const [commentText, setCommentText] = useState('');
             onFocus={handleInputFocus}
             onBlur={handleInputBlur}
           />
-          <button className="submit-button" onClick={handleCommentSubmit} >Post</button>
+          {showPost? (
+            <button className="submit-button" onClick={handleCommentSubmit} >Post</button>
+          ):(
+            <></>
+          )}
+          
         </div>
     </div>
   );

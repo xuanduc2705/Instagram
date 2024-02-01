@@ -39,7 +39,7 @@ function Modal({ setOpenModal }) {
                 <img src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg'  alt=''/>
                 </Avatar>
                 <div className='profileinfoo'
-                
+                  style={{display:'flex',flexDirection:'row',width:'80%'}}
                 >
                 <Link to={`/detail/${name}`}  className='usernameee' >{name}
                 </Link>

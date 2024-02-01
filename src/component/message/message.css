@@ -72,19 +72,7 @@
     font-size: 12px;
     color: gray;
 }
-.inbox{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-.fromme{
-    padding: 10px;
-    position: absolute;
-    right: 0;
-}
-.fromher{
-    padding: 10px;
-}
+
 .fullbenphai{
     width: 1000px;
     display: flex;

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { IoCallOutline } from "react-icons/io5";
 import { FiVideo } from "react-icons/fi";
 import { MdOutlineInfo } from "react-icons/md";
+import "bootstrap/dist/css/bootstrap.min.css";
 function Message(){
     const{name} = useParams();
   
@@ -42,7 +43,7 @@ return(
                     </span>
                 </div>
                 <div className="danhsachnick">
-                    {posts.map((po,index)=>(
+                {posts.map((po,index)=>(
                         <div className="nick"
                         onClick={() => handleNickClick(po.sname,po.ava,po.chat,po.ten2,po.online)}
                         key={index}
@@ -95,18 +96,79 @@ return(
                 </div>
             </div>
              
-            <div className="dinbox">
-            {selectedNick.chat.map((message, index) => (
-          <div key={index} className="inbox">
-            <span className="fromme">{message.home}</span>
-            <span className="fromher">{message.away}</span>
-          </div>
-        ))}
-            </div>
+            <div
+  className="dinbox"
+  style={{
+    padding: "10px",
+    display: "flex",
+    flexDirection: "column"
+  }}
+>
+  {selectedNick.chat.map((message, index) => (
+    <div
+      key={index}
+      className="inbox"
+      style={{
+        padding: "10px",
+        display: "flex",
+        flexDirection: "column"
+      }}
+    >
+      <div
+        className="message home"
+        style={{
+          padding: "10px 15px",
+          backgroundColor: "rgb(55, 151, 240)",
+          borderRadius: "20px",
+          marginBottom: "10px",
+          maxWidth: "30vw",
+          width: "fit-content",
+          display: "inline-block",
+          marginLeft: "auto",
+          textAlign: "right",
+          color:'white'
+        }}
+      >
+        {message.home}
+      </div>
+      <div
+        className="message away"
+        style={{
+          marginLeft: "0",
+          textAlign: "left"
+        }}
+      >
+        <div className="away"
+        style={{display:'flex',
+        flexDirection:'row'
+    }}
+        
+        >
+        <Avatar src={selectedNick.ava} style={{marginRight:'10px'}}>
+
+        </Avatar>
+        <div className="span" style={{padding: "10px 15px",
+          backgroundColor: "lightgrey",
+          borderRadius: "20px",
+          marginBottom: "10px",
+          maxWidth: "30vw",
+          width: "fit-content",
+          display: "inline-block",}}>
+            {message.away}
+        </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
             
           </div>
         ) : (
-          <span>No nick selected</span>
+          <div className="noselect"
+          style={{}} 
+          >
+           <span>No one selected</span>
+          </div>
         )}
         </div>
     </div>

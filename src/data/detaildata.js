@@ -128,6 +128,13 @@ export const posts = ([
         sname:'s.pinkduck_03',
         online:'Active 12m ago',
         posts:'3',
+        chat:[{
+          away:'Thanks',
+          home:`You are so great man! Soooooo gooooodddddd!`
+        },{
+          away:`Let's think about it .....`,
+          home:`Will you score tonight???`
+        }],
           followers:'115',
           following:'1',
           ten2:'🅳🆄🅺🅴',
@@ -236,6 +243,16 @@ export const posts = ([
           followers:'617M',
           following:'583',
           ten2:'Cristiano Ronaldo',
+          chat:[{
+            away:'Thanks haha',
+            home:`Hello Goat`
+          },{
+            away:`Good, at least I can get rest more but also score goals`,
+            home:`How is this going in Al Nassar???`
+          },{
+            away:`Nope, I feel good here. MU always in my heart, but can't comeback. I loves everyone, the fan, the teamates, ....`,
+            home:`Comeback to MU 1 again???`
+          }],
           tieusu:'Join my NFT journey on @Binance. Click the link below to get started.\nter.li/CR7ForeverZone\nSiuuuuuuuuuuuuuuuuuuuu',
           image:[{
             src:'https://assets.manutd.com/AssetPicker/images/0/0/10/126/687707/Legends-Profile_Cristiano-Ronaldo1523460877263.jpg',
@@ -432,6 +449,13 @@ export const posts = ([
           followers:'617M',
           following:'583',
           ten2:'Lionel Messi',
+          chat:[{
+            away:'Thanks',
+            home:`You are so great man! Soooooo gooooodddddd!`
+          },{
+            away:`Let's think about it .....`,
+            home:`Will you score tonight???`
+          }],
           tieusu:'Join my NFT journey on @Binance. Click the link below to get started.\nter.li/GOAT OF FOOTBALL\nMESSiuuuuuuuuuuuuuuuuuuuu',
           image:[{
             src:'https://pbs.twimg.com/media/FihKp7AVIAAHDaX?format=jpg&name=large',
@@ -452,6 +476,13 @@ export const posts = ([
       ava:'https://i.ibb.co/3m0cnrp/418758070-2278354819026761-6414880944565960628-n.jpg',
       sname:'hathu_87',
       online:'Active 50m ago',
+      chat:[{
+        away:'Thanks',
+        home:`You are so great man! Soooooo gooooodddddd!`
+      },{
+        away:`Let's think about it .....`,
+        home:`Will you score tonight???`
+      }],
       post:[{
         src:'https://i.ibb.co/8zpJf7k/364283526-616519233641265-8216121588764280777-n.jpg',
         name:'Real Madrid',
@@ -554,6 +585,13 @@ export const posts = ([
     posts:'340',
         followers:'26M',
         following:'723',
+        chat:[{
+          away:'Thanks',
+          home:`You are so great man! Soooooo gooooodddddd!`
+        },{
+          away:`Let's think about it .....`,
+          home:`Will you score tonight???`
+        }],
         image:[{
           src:'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F06%2Freal-madrid-signs-jude-bellingham-borussia-dortmund-1.jpg?cbr=1&q=90',
           name:'Real Madrid'
@@ -669,6 +707,13 @@ export const posts = ([
   online:'Active 4h ago',
   like:6969,
   time:'3h',
+  chat:[{
+    away:'Thanks',
+    home:`You are so great man! Soooooo gooooodddddd!`
+  },{
+    away:`Let's think about it .....`,
+    home:`Will you score tonight???`
+  }],
   content:'Van Mieu Quoc Tu Giam ❤️',
   posts:'340',
       followers:'26M',
@@ -791,6 +836,13 @@ export const posts = ([
   time:'3h',
   ten2:'Manchester United',
   content:'Van Mieu Quoc Tu Giam ❤️',
+  chat:[{
+    away:'Thanks',
+    home:`You are so great man! Soooooo gooooodddddd!`
+  },{
+    away:`Let's think about it .....`,
+    home:`Will you score tonight???`
+  }],
   posts:'340',
       followers:'26M',
       following:'723',
