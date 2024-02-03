@@ -14,20 +14,7 @@ import Message from './component/message/message.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-    <Route path='/' element={<App/>} />
-    <Route path='/home' element={<Home/>} />
-    <Route path='/detail/' element={<Detail/>} />
-    <Route path="/detail/:name" element={<Detail />} /> 
-    <Route path='/login' element={<Login/>}/>
-    <Route path='/explore' element={<Explore/>}></Route>
-    <Route path='/reels' element={<Reels/>}></Route>
-    <Route path='/message' element={<Message/>}></Route>
-    </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function

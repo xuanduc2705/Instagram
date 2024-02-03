@@ -88,9 +88,25 @@ function Nav({ explore,reels}) {
     }
   };
   const isResult = query !== '' && inputRef.current.value!== '';
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navElement = document.getElementById('main-nav');
+      if (navElement && !navElement.contains(event.target)) {
+        setIsNavVisible(true);
+        setShowAnotherNav(false);
+        setShowAnotherNavi(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
   return (
     <>
-    <div className={`Nav ${isNavVisible ? '' : 'hide-nav'}`}>
+    <div className={`Nav ${isNavVisible ? '' : 'hide-nav'}`} id="main-nav">
     <Link to='/home' >
     <img className='nav_logo' 
         src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png' 

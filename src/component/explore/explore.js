@@ -21,13 +21,13 @@ return(
           {reel.map((post, index) => (
             <div className="baidangg1">
               <div className="baidangg11" style={{height:'320px'}}>
-              <img key={index} src={post.src} className="heto" alt="" />
+              <img key={index} src={post.avatar} className="heto" alt="" />
                 <h3 className="reelview">{post.like}</h3>
-                <PlayArrowRoundedIcon className="reelicon"/>
+                <PlayArrowRoundedIcon className="reelicon" style={{fontSize:'40px'}}/>
                 <div className="overlay">
                   <div className="caption">
                     <div className="like">
-                      <FavoriteBorderRoundedIcon className="icontym"/>
+                      <FavoriteBorderRoundedIcon className="icontym" style={{marginBottom:'40px'}}/>
                     <h3 className="tym">{post.like}</h3>
                     </div>
                     <div className="cmt">
