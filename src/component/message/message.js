@@ -110,6 +110,14 @@ function Message(){
     }
   };
   const isResult = query !== '' && inputRef.current.value!== '';
+  const closenav = () => {
+    setShowAnotherNav(false);
+      setShowAnotherNavi(true);
+  }
+  const closenavi = () => {
+    setShowAnotherNav(true);
+      setShowAnotherNavi(false);
+  }
 return(
     
     <div className="message" style={{marginLeft:'0px'}}>
@@ -190,7 +198,7 @@ return(
             <ChatIcon className='buts'/>
           </button>
             </Link>
-          <button className='sidenav_button2'>
+          <button className='sidenav_button2' onClick={closenav}>
             <FavoriteBorderIcon className='buts'/>
           </button>
           <button className='sidenav_button2'>
@@ -270,7 +278,7 @@ return(
             <HomeOutlinedIcon style={{fontSize:'27px'}} />
           </button>
           </Link>
-          <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
+          <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}} onClick={closenavi}>
             <SearchIcon className='buts' />
           </button>
           <button className='sidenav_button2'>

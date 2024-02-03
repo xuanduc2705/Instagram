@@ -96,6 +96,14 @@ function Home() {
     setShowAnotherNav(false);
       setShowAnotherNavi(false);
   }
+  const closenav = () => {
+    setShowAnotherNav(false);
+      setShowAnotherNavi(true);
+  }
+  const closenavi = () => {
+    setShowAnotherNav(true);
+      setShowAnotherNavi(false);
+  }
   return (
     <div className="homepage">
       <div className="homepage_nav">
@@ -198,7 +206,7 @@ function Home() {
               <ChatIcon className='buts'/>
             </button>
               </Link>
-            <button className='sidenav_button2'>
+            <button className='sidenav_button2' onClick={closenav}>
               <FavoriteBorderIcon className='buts'/>
             </button>
             <button className='sidenav_button2'>
@@ -278,7 +286,7 @@ function Home() {
               <HomeOutlinedIcon style={{fontSize:'27px'}} />
             </button>
             </Link>
-            <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
+            <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}} onClick={closenavi}>
               <SearchIcon className='buts' />
             </button>
             <button className='sidenav_button2'>
@@ -325,13 +333,96 @@ function Home() {
               Mark Zuckerberg
             </span>
             </div>
-            
             </div>
-            
-            
           </div>
           <div className="benphaiduoi">
-            <h1>Hi</h1>
+           <div className="thisweek" style={{height:'auto'}}>
+            <h1 style={{fontSize:'16px',fontWeight:'700'}}>This week</h1>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+           </div>
+           <div className="thismonth">
+           <h1 style={{fontSize:'16px',fontWeight:'700'}}>This month</h1>
+           <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+            <div className="information" style={{display:'grid',gridTemplateColumns:'13% 70% 13%',padding:'10px',cursor:'pointer',marginBottom:'3px'}}>
+              <Avatar src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'/>
+              <div className="contentt" style={{padding:'0 5px 0 5px ',fontSize:'14px'}}>
+                <p><strong>judebellingham</strong> liked your story</p>
+              </div>
+              <img src='https://pbs.twimg.com/profile_images/1669466617409880067/ErRoSTXm_400x400.jpg'
+                style={{height:'40px',width:'40px'}}
+                />
+            </div>
+           </div>
           
         </div>
         </div>
