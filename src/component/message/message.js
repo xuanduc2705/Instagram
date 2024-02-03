@@ -385,6 +385,7 @@ return(
         </div>
         <div className="messbentrai" style={{width:'100%'}} onClick={handleClose}>
         {selectedNick ? (
+          <>
           <div className="fullbenphai">
             <div className="chatbar">
             <div className="nick"
@@ -474,10 +475,18 @@ return(
         </div>
       </div>
     </div>
-  ))}
+      ))}
 </div>
             
           </div>
+          <div className="inputmess"
+          style={{border:'1px solid lightgrey', borderRadius:'100px',padding:'10px',display:'grid',gridTemplateColumns:''}}
+          >
+            <input type="text" placeholder="Message" 
+            style={{border:'none'}}
+            />
+          </div>
+          </>
         ) : (
           <div className="noselect"
           style={{}}
