@@ -6,6 +6,10 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { saveTokenToSessionStorage } from "../Util/storageUtil";
 import { red } from "@mui/material/colors";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function redirectG(){
     window.location.href = "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D30DCB500-F0B0-4E1D-A3EB-4FF738793965%26utm_campaign%3DloginPage%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge%26original_referrer%3Dhttps%3A%2F%2Fcoccoc.com%2Fsearch%3Fquery%3DInstagram";
@@ -15,8 +19,12 @@ function redirectM(){
     
 }
 function Login(){
-
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
@@ -34,6 +42,7 @@ function Login(){
             setShowError(true)
             saveTokenToSessionStorage(res.data.token);
             navigate("/home");
+            window.location.reload();
           }
         } catch (error) {
           console.error("An error occurred:", error);
@@ -41,7 +50,7 @@ function Login(){
         }
       };
 return(
-    <div className="Login">
+    <div className="Login" style={{height:"100%"}}>
     <div className="loginbody">
         <div className="loginbody1">
             <img src="https://i.ibb.co/nch8VHn/login.png"
@@ -139,7 +148,7 @@ return(
                 <span>English</span>
                 <span>© 2024 Instagram from Meta</span>
             </div>
-    </div>
+        </div>
     </div>
 );
 }

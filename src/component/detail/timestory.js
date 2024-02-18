@@ -11,20 +11,18 @@ function TimeStory() {
       const tenn = posts.find(post => post.sname === name);
       const anhs = tenn.image;
   return (
-      <div className='timestory'>
-        {anhs.map((post, index) => (
-            <div className='yes'>
-            <div className='covercover'>
-             <div className='coverimage1'>
-             <img key={index} src={post.src} className='heto' alt=''/>
-             
-             </div>
-             
-             </div>
-             <div className='storyname'>{post.name}</div>
-             </div>
-        ))}
+    <div className='timestory'>
+    {anhs.slice(0, window.innerWidth < 600 ? 5 : anhs.length).map((post, index) => (
+      <div className='yes' key={index}>
+        <div className='covercover'>
+          <div className='coverimage1'>
+            <img src={post.src} className='heto' alt=''/>
+          </div>
+        </div>
+        <div className='storyname'>{post.name}</div>
       </div>
+    ))}
+  </div>
   );
 }
 

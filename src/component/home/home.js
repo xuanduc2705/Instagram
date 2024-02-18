@@ -114,15 +114,17 @@ function Home() {
         alt=''
         />
     </Link>
-        
+    <Link to='/home' className='igiconic'>
+          <InstagramIcon />
+    </Link>
         <div className='nav_buttons'>
               <Link to='/home' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button'>
               <HomeOutlinedIcon/>
-             <span className='spann' >Home</span>
+             <span className='spann'>Home</span>
             </button>
             </Link>
-            <button className='sidenav_button'onClick={handleSearchClick} >
+            <button className='sidenav_button search'onClick={handleSearchClick} >
               <SearchIcon/>
               <span className='spann'>Search</span>
             </button>
@@ -158,7 +160,7 @@ function Home() {
               <span className='spann'>Messages</span>
             </button>
             </Link>
-            <button className='sidenav_button' onClick={handleNofiClick}>
+            <button className='sidenav_button search' onClick={handleNofiClick}>
               <FavoriteBorderIcon/>
               <span className='spann'>Notifications</span>
             </button>
@@ -166,8 +168,14 @@ function Home() {
               <AddCircleOutlineIcon/>
               <span className='spann'>Create</span>
             </button>
+              <div className="profileava">
+              <Avatar 
+              src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg'
+              alt='' 
+              style={{margin:'7px 20px 0 0'}} />
+              </div>
             <div className='sidenav_more'>
-            <button className='sidenav_button' onClick={handleNavClose}>
+            <button className='sidenav_button menu' onClick={handleNavClose}>
               <MenuIcon/>
               <span className='spann'>More</span>
             </button>
@@ -192,7 +200,7 @@ function Home() {
               <HomeOutlinedIcon style={{fontSize:'27px'}} />
             </button>
             </Link>
-            <button className='sidenav_button2'onClick={handleNavClose} style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
+            <button className='sidenav_button2 search'onClick={handleNavClose} style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}}>
               <SearchIcon className='buts' />
             </button>
             <button className='sidenav_button2'>
@@ -213,7 +221,7 @@ function Home() {
               <AddCircleOutlineIcon className='buts'/>
             </button>
             <div className='sidenav_more'>
-            <button className='sidenav_button2' >
+            <button className='sidenav_button2 menu' >
               <MenuIcon className='buts'/>
             </button>
             </div>
@@ -286,8 +294,8 @@ function Home() {
               <HomeOutlinedIcon style={{fontSize:'27px'}} />
             </button>
             </Link>
-            <button className='sidenav_button2' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}} onClick={closenavi}>
-              <SearchIcon className='buts' />
+            <button className='sidenav_button2 search' style={{width:'40px',height:'40px',border:'1px lightgrey solid',justifyContent:'center',marginLeft:'3px'}} onClick={closenavi}>
+              <SearchIcon className='buts search' />
             </button>
             <button className='sidenav_button2'>
             <ExploreOutlinedIcon className='buts' />
@@ -307,7 +315,7 @@ function Home() {
               <AddCircleOutlineIcon className='buts'/>
             </button>
             <div className='sidenav_more'>
-            <button className='sidenav_button2' >
+            <button className='sidenav_button2 menu' >
               <MenuIcon className='buts'/>
             </button>
             </div>

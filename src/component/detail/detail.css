@@ -1,6 +1,10 @@
 .detailpage{
     display: grid;
     grid-template-columns: 15% 85%;
+    min-width: 375px;
+}
+.detailhomepage_nav{
+    min-width: 200px;
 }
 .time_tail{
     width: 85%;
@@ -12,8 +16,109 @@
 .time_story{
     justify-content: center;
     margin-left: 36px;
+    position: relative;
 }
 .time_tail2{
     margin-top: 40px;
     border-top: 1px solid lightgrey;
 }
+.detailprofileava{
+    display: none;
+}
+.detailigiconic{
+    display: none;
+}
+.iinfo1{
+    display: none;
+}
+@media screen and (max-width: 1100px) {
+    .detailpage{
+        position: relative;
+        display: grid;
+        grid-template-columns: 6% 94%;
+    }
+    .detailpage_time{
+        padding-bottom: 60px;
+    }
+    .detailpage_nav{
+        width: 100%;
+        min-width: 60px;
+    }
+    .detailigiconic{
+        display: flex;
+        padding: 18px 18px 10px 18px;   
+    }
+}
+@media screen and (max-width: 800px) {
+    .detailpage{
+        display: flex;
+       position: relative;
+    min-height: 100vh; 
+    }
+    .detailpage_nav{
+        width: 0;
+        min-width: 0;
+    }
+    .infoname{
+        font-weight: 500;
+        font-size: 18px;     
+    } 
+    .detailhomepage_nav {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        z-index: 999;
+        min-width: 375px;
+      }
+      .detailNav {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid grey;
+        background-color: white;
+        width: 100%;
+      }
+      .detailmenu{
+        display: none;
+      }
+      .detailnav_buttons {
+        display: grid;
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        width: 100%;
+      }
+      .detailigiconic{
+        display: none;
+      }
+      .sidenav_button:hover{
+        cursor: pointer;
+        background-color:white;
+    }
+    .detailprofileava{
+        display: inline;
+    }
+    .time_story{
+            overflow:scroll;
+            margin-left: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    .detailpage{
+        width: 100%;
+    }
+    .time_tail2{
+        width: 100%;
+        margin-top: 40px;
+        border-top: 1px solid lightgrey;
+    }
+    .time_tail{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+

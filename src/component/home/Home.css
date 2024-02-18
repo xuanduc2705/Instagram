@@ -1,14 +1,146 @@
 .homepage{
     display: flex;
     flex-direction: row;
-}
-.homepage_nav{
-    flex:0.15;
+    width: 100%;
 }
 .homepage_time{
-    flex: 0.85;
+  width: 90%;
+}
+.timelibe_right{
+    width: 400px;
+}
+.profileava{
+  display:none;
+}
+@media screen and (min-width: 1100px) {
+    .homepage_nav{
+        width: 230px;
+        border-right: 1px solid lightgrey;
+        min-width: 230px; 
+    }
+  }
+  @media (max-width: 500px) {
+    .post{
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+  }
+  .baidanggreel{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0 auto;
+    width: 930px;
 }
 .information:hover{
     background-color: lightgray;
     border-radius: 10px;
 }
+  
+  .nav_logo{
+      width: 120px;
+      margin: 20px;
+  }
+  .igiconic{
+    display: none;
+  }
+  @media screen and (max-width: 1340px) {
+    .timelibe_right{
+        display: none;
+    }
+  }
+@media screen and (max-width: 1100px) {
+  .menu{
+    display: none;
+  }
+  .story{
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    .igiconic{
+        display: flex;
+        text-decoration: none;
+        color: black;
+        padding: 30px 20px 20px 20px;
+    }
+    .nav_logo{
+      display: none;
+    }
+    .homepage_nav{
+        width: 80px;
+        border-right: 1px solid lightgrey;
+    }
+    .spann{
+        display: none;
+    }
+    .homepage_time{
+        width: 85%;
+    }
+    .timeline_left{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .timeline_left {
+      width: 100%;
+      margin-left: 10%;
+    }
+    .profileava{
+      display: inline;
+    }
+    .homepage {
+      display: flex;
+      position: relative;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  
+    .story-left {
+      margin-left: 0;
+    }
+  
+    .homepage_nav {
+      width: 100%;
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 999;
+    }
+    
+    .Nav {
+      display: flex;
+      flex-direction: row;
+      border-top: 1px solid grey;
+      background-color: white;
+      width: 100%;
+    }
+    .menu{
+      display: none;
+    }
+    .nav_buttons {
+      display: grid;
+      margin-left: 20px;
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+      width: 100%;
+    }
+    .igiconic{
+      display: none;
+    }
+    .search{
+      display: none;
+    }
+    .sidenav_button:hover{
+      cursor: pointer;
+      background-color:white;
+  }
+  .sidenav_button23{
+    background-color:white;
+  }
+  }
+  

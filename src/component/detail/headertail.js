@@ -9,8 +9,6 @@ import { posts } from "../../data/detaildata";
 
 function Headertail() {
     const { name } = useParams();
-    
-    
     const tenn = posts.find(post => post.sname === name);
     const text = tenn.ten2;
   return (
@@ -23,6 +21,19 @@ function Headertail() {
         alt=""
         />
         </div>
+        <div className="iinfo1">
+          <div className="detailname">
+          <span className="infoname">
+                {name}
+          </span>
+          <DoneIcon className='done' style={{ fontSize: '16',marginRight:'10',borderRadius: '50%', color:'white',backgroundColor:'blue',marginRight:'30px' }} />
+          </div>
+          <div className="detailbutt">
+            <button className="but">Following</button>
+            <button className="but">Message</button>
+            <MoreHorizIcon style={{color:'black',fontSize:'25px'}} className="but2"/>
+          </div>
+        </div>
         </div>
         <div className="hinfo">
         <div className="info1">
@@ -32,7 +43,6 @@ function Headertail() {
             <DoneIcon className='done' style={{ fontSize: '16',marginRight:'10',borderRadius: '50%', color:'white',backgroundColor:'blue',marginRight:'30px' }} />
             <button className="but">Following</button>
             <button className="but">Message</button>
-            {/* <button className="but2"><PersonAddAltIcon/></button> */}
             <MoreHorizIcon style={{color:'black',fontSize:'25px'}} className="but2"/>
         </div>
         <div className="info2">
@@ -54,8 +64,6 @@ function Headertail() {
         </div>
         <div className="info4"></div>
         </div>
-        
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 .timetailpage{
     text-align: center;
+    width: 100%;
 }
 .buto1{
     margin-right: 60px;
@@ -19,7 +20,7 @@
     padding: 1px;
 }
 .baidang11{
-    height: 344px;
+    aspect-ratio: 1;
     width: 100%;
     position: relative;
   display: inline-block;
@@ -38,14 +39,17 @@
 }
 .baidangg11{
     position: relative;
+    aspect-ratio: 0.7/1;
 }
 .baidangg11:hover{
     cursor: pointer;
 }
 .reelview{
+  font-size: 24px;
+  font-weight: 600;
     position: absolute;
   bottom: 0;
-  left: 22px;
+  left: 18px;
   margin: 0;
   padding: 8px;
   color: white;
@@ -87,6 +91,9 @@
     font-weight: bold;
     text-align: center;
   }
+  .tym{
+    margin-top: 10px;
+  }
   .like{
     display: flex;
     flex-direction: row;
@@ -105,4 +112,72 @@
   .buto1.active {
     color: black;
     font-weight: bolder;
+  }
+  .modal-container {
+    backdrop-filter: blur(8px); /* Apply blur effect to the background */
+  }
+  
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent black overlay */
+  }
+  .butohide{
+    display: none;
+  }
+  @media screen and (max-width: 800px) {
+    .buto1{
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    .butohide{
+      display: inline;
+    }
+    .buto{
+      display: none;
+    }
+    .reelview{
+      font-size: 16px;
+      font-weight: 600;
+        position: absolute;
+      bottom: 0;
+      left: 10px;
+      margin: 0;
+      padding: 8px;
+      color: white;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .baidang{
+      max-width: 500px;
+      width: 100%;
+    }
+    .caption{
+      display: flex;
+      flex-direction: column;
+    }
+    .like{
+      display: flex;
+      flex-direction: row;
+      margin-right: 10px;
+    }
+    .cmt{
+      display: flex;
+      flex-direction: row;
+    }
+    .tym{
+      margin-top: 10px;
+    }
+    .icontym{
+      font-size: 10px;
+      margin-right: 3px;
+    }
+    .reelview{
+      font-size: 14px;
+      font-weight: 600;
+        position: absolute;
+      bottom: 0;
+      left: 10px;
+      margin: 0;
+      padding: 8px;
+      color: white;
+    }
   }

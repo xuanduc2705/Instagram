@@ -15,10 +15,6 @@ export const posts = ([
             name:'Real Madrid'
         },
         {
-            src:'https://i.guim.co.uk/img/media/38d765dbbe8dfd454da6d688c3e284aa6562b473/0_169_4076_2445/master/4076.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=4337eb1e19b6cc3c31598905539f1372',
-            name:'FC DortMund'
-        },
-        {
             src:'https://photo-cms-giaoducthoidai.epicdn.me/w820/Uploaded/2024/ygtmrk/2023_12_29/methode-times-prod-web-bin-2a55b224-053c-11ee-9bf2-8ca4db35d928-823.jpg',
             name:'England'
         },
@@ -33,38 +29,55 @@ export const posts = ([
         {
             src:'https://pbs.twimg.com/media/Fo_jU5cWcAAvVE1.jpg',
             name:'MOTM'
-        },
-        {
-            src:'https://www.thesun.co.uk/wp-content/uploads/2023/06/crop-22612501-2.jpg?strip=all&quality=100&w=1080&h=1080&crop=1',
-            name:'Birmingham'
         }],
         post:[{
           src:'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F06%2Freal-madrid-signs-jude-bellingham-borussia-dortmund-1.jpg?cbr=1&q=90',
           name:'Real Madrid',
+          content:'The dream comes true. Wait this momment for a long times. Now I am a part of this club. Vamos,Hala Madrid!!!',
           like:'2M',
-          cmt:'699K'
+          time:'33w',
+          cmt:'699K',
+          cmts:[{
+            avatar:'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F06%2Freal-madrid-signs-jude-bellingham-borussia-dortmund-1.jpg?cbr=1&q=90',
+            author:'xuanduc',
+            time:'33w',
+            likes:'20',
+            cmts:'6',
+            comment:`You're the best`
+          },{
+            avatar:'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F06%2Freal-madrid-signs-jude-bellingham-borussia-dortmund-1.jpg?cbr=1&q=90',
+            author:'xuanduc',
+            likes:'20',
+            time:'33w',
+            cmts:'6',
+            comment:`You're the best`
+          }]
       },
       {
           src:'https://i.guim.co.uk/img/media/38d765dbbe8dfd454da6d688c3e284aa6562b473/0_169_4076_2445/master/4076.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=4337eb1e19b6cc3c31598905539f1372',
           name:'FC DortMund',
+          content:'Hala Madrid',
           like:'2M',
           cmt:'699K'
       },
       {
           src:'https://photo-cms-giaoducthoidai.epicdn.me/w820/Uploaded/2024/ygtmrk/2023_12_29/methode-times-prod-web-bin-2a55b224-053c-11ee-9bf2-8ca4db35d928-823.jpg',
           name:'England',
+          content:'Hala Madrid',
           like:'2M',
           cmt:'699K'
       },
       {
           src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTTbQFtT73N5_uzphYBMDvwheYcfozUUpkrgt6WO2Ec7U2PmmRYrG9qpGWloFoE83RLhk&usqp=CAU',
           name:'Post',
+          content:'Hala Madrid',
           like:'2M',
           cmt:'699K'
       },
       {
           src:'https://i.pinimg.com/750x/fe/90/31/fe903186576f3193c0220c333d4f4740.jpg',
           name:'Life',
+          content:'Hala Madrid',
           like:'2M',
           cmt:'699K'
       },
@@ -72,12 +85,14 @@ export const posts = ([
           src:'https://pbs.twimg.com/media/Fo_jU5cWcAAvVE1.jpg',
           name:'MOTM',
           like:'2M',
+          content:'Hala Madrid',
           cmt:'699K'
       },
       {
           src:'https://www.thesun.co.uk/wp-content/uploads/2023/06/crop-22612501-2.jpg?strip=all&quality=100&w=1080&h=1080&crop=1',
           name:'Birmingham',
           like:'2M',
+          content:'Hala Madrid',
           cmt:'699K'
       }],
         reel:[{
@@ -267,35 +282,27 @@ export const posts = ([
             name:'Portugal'
         },
         {
-            src:'https://i.insider.com/5e46682c2dae5c53dd0ab024?width=700',
-            name:'Juventus'
-        },
-        {
             src:'https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltee886584fd1cd345/60db8718892a730f5883a347/68a712aa7ffd3da7d91c2fe1469bda58990f7ab7.jpg?auto=webp&format=pjpg&width=1200&quality=60',
             name:'Real Madrid'
-        },
-        {
-            src:'https://migranteswc.shop/cdn/shop/files/SHOPIFYPRODUCTSIZEFRAME-9_c1c8c4cf-4c87-4e33-9481-8f6764d8ef26.png?v=1686619118&width=1946',
-            name:'Sporting Lisbon'
         },
         {
             src:'https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTkxMTk2ODg3MjA4MzA1ODk5/cristiano-ronaldo-family-photo.png',
             name:'Family'
         }],
         post:[{
-          src:'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/419179869_392055493395181_2827287609742874942_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeEdZLxs8X97f7OIhjFB67MFp-FoYlOOFR6n4WhiU44VHkIGl1lMcw7msGVRMmPgez21X_z5EfC4phsvvAwFPt26&_nc_ohc=SllxzFngos0AX9cgUGr&_nc_ht=scontent.fhan17-1.fna&oh=00_AfASAw6xJXJZz9Y9BkgTtEoTOVDUQ4CpqE4X57-YDtAaVg&oe=65B7A498',
+          src:'https://images2.thanhnien.vn/528068263637045248/2024/2/17/r12925231296x72916-9-17082125557921571773159.jpg',
           name:'Real Madrid',
           like:'2M',
           cmt:'699K'
       },
       {
-          src:'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/414678701_381636267770437_6673512814759662704_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeHt2fjCeJIF01Ne8_hvVzQP_AI3-u03iiz8Ajf67TeKLCPhiaQ2SL2H93T3B-5dZGen6-sLPPmV4tVmAvVEkAk7&_nc_ohc=HY-qGbzHU-gAX8eg4Zl&_nc_oc=AQlUrdfTmt9V88tATaG2qnFlUT5aTppKM9ClCDL_YgzHxzwnRwNWKXIGB7WKRrEGwGE&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCjQgf5cSeAX79PxXdQm3zTS2CGqpRSH450fnVU3032pw&oe=65B791DD',
+          src:'https://www.konteks.co.id/wp-content/uploads/2023/11/Ronaldo-1.jpeg',
           name:'FC DortMund',
           like:'2M',
           cmt:'699K'
       },
       {
-          src:'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/411944926_379181648015899_2306037599264295983_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFFJwppx5i-FAvLze0wUUMOw_7kkS0wZ5nD_uSRLTBnmTxyWQmW2yX226U_WhYDQHF6LIwT1GAKtcvw51jtRuAo&_nc_ohc=_t6CKYen3GAAX_InRWY&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCvnSG21FRYOZ_Umi0Bql35fmmHLQ0e3i8W5DiVlqyLDg&oe=65B88371',
+          src:'https://cdn.tuoitre.vn/thumb_w/480/471584752817336320/2024/2/15/cristiano-ronaldo-al-fayha-v-al-nassr-1707952110553879513339.jpg',
           name:'England',
           like:'2M',
           cmt:'699K'

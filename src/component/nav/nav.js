@@ -232,8 +232,7 @@ function Nav({ explore,reels}) {
             <CancelIcon className='x' style={{fontSize:'17px',color:'grey',marginTop:'3px'}} 
              onClick={handleCancelClick}
             />
-            </div>
-            
+            </div>           
           </div>
           <div className="benphaiduoi">
             {isResult? (

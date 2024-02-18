@@ -153,17 +153,20 @@
     justify-content: center;
 }
 .list{
+    margin: 0 auto;
+    width: 55%;
     margin-top: 40px;
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
 }
 .lis{
+    flex: 0 0 auto;
+    margin: 5px;
     text-decoration: none;
     color: #737373;
     font-size: 12px;
-    margin-right: 18px;
     cursor: pointer;
 }
 .lis:hover{
@@ -183,4 +186,66 @@
 }
 .selectlang>span{
     margin-right: 8px;
+}
+@media screen and (max-width: 900px) {
+    .login{
+        height: 100%;
+    }
+    .loginbody{
+        display: grid;
+        grid-template-columns: 100%;
+        height: 610px;
+    }
+    .loginbody1{
+        display: none;
+    }
+    .loginbody2{
+        margin: 0 auto;
+    }
+    .formlogin{
+        margin-top: 60px;
+        width: 95%;
+        margin: 0 auto;
+        min-height: 600px;
+        height: 80%;
+        margin-left: 15px;
+        
+    }
+    .headerlogin{
+        border: none;
+    }
+    .signup{
+        border: none;
+        margin-top: 20%;
+    }
+    .usernam{
+        width: 85%;
+    }
+    .loginbutton{
+        width: 87%;
+    }
+    .loginwith{
+        font-size: 12px;
+    }
+    .appp{
+        margin-top: 10%;
+    }
+    .list {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .lis {
+        flex: 0 0 auto;
+        margin: 5px;
+    }
+    .loginfooter{
+        margin-top: 20px;
+    }
+    
 }

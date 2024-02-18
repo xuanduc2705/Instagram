@@ -15,6 +15,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookMessenger } from '@fortawesome/free-brands-svg-icons';
 import { getTokenFromSessionStorage } from "../Util/storageUtil";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 function Post({ava,image,sname, like,time,content,postt,following,followers,pos1,pos2,pos3,cmt,onAddComment}) {
   const navigate = useNavigate();
@@ -268,6 +271,7 @@ const [commentText, setCommentText] = useState('');
           )}
           
         </div>
+        
     </div>
   );
 }

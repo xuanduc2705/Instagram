@@ -30,7 +30,11 @@ import { TbBrandMessenger } from "react-icons/tb";
 import SlideshowTwoToneIcon from '@mui/icons-material/SlideshowTwoTone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { PiMessengerLogoFill } from 'react-icons/pi';
+import { BsEmojiSmile } from "react-icons/bs";
+import { MdOutlineKeyboardVoice } from "react-icons/md";
+import { IoImageOutline } from "react-icons/io5";
 function Message(){
+  
   const [ten,setTens] = useState([{
     stoava:'https://i.ibb.co/qkhmRLp/418758070-2278354819026761-6414880944565960628-n.jpg',
     name:'hathu_87',
@@ -118,25 +122,49 @@ function Message(){
     setShowAnotherNav(true);
       setShowAnotherNavi(false);
   }
+
+  const [commentText, setCommentText] = useState('');
+  const [IsSend,SetIsSend] = useState(true)
+  const handleSendText = (event) => {
+    const inputValue = event.target.value;
+    setCommentText(inputValue);
+    SetIsSend(inputValue.length <= 0);
+  }
+  const handleSendSubmit = () =>{
+    if(commentText !==''){
+      const newComment = {
+         
+        home: commentText,
+      };
+  
+      const updatedChat = [...selectedNick.chat, newComment];
+    setSelectedNick((prevNick) => ({
+      ...prevNick,
+      chat: updatedChat,
+    }));
+      setCommentText('');
+      SetIsSend(true)
+    }
+  }
 return(
     
     <div className="message" style={{marginLeft:'0px'}}>
         <div className="messnavv">
-        <div className="messnav" id='main-nav'>
-        <div className="bentraii">
+        <div className={`mNav ${isNavVisible ? '' : 'hide-nav'}`} id="main-nav">
+        <div className="messbentraii">
         <Link to='/home'style={{ textDecoration: 'none' }} >
-        <div className='nav_logo' style={{width:'50px'}} >
+        <div className='nav_logo' style={{width:'50px',textDecoration:'none'}} >
           <InstagramIcon style={{fontSize:'25px',textDecoration:'none'}} className='igicon' />
         </div>
         </Link>
-        <div className='nav_buttons' style={{marginTop:'43px',marginLeft:'10px'}}>
+        <div className='messnav_buttons'>
               <Link to='/home' className='buts' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button2' >
               <HomeOutlinedIcon style={{fontSize:'27px'}} />
             </button>
             </Link>
-            <button className='sidenav_button2' style={{width:'40px',height:'40px',justifyContent:'center',marginLeft:'3px'}}>
-              <SearchIcon className='buts' onClick={handleSearchClick}/>
+            <button className='sidenav_button2 search' style={{width:'40px',height:'40px',justifyContent:'center',marginLeft:'3px'}}>
+              <SearchIcon className='buts ' onClick={handleSearchClick}/>
             </button>
             <Link to='/explore' style={{ textDecoration: 'none' }}>
             <button className='sidenav_button2'>
@@ -152,17 +180,23 @@ return(
               <PiMessengerLogoFill className='buts' style={{fontSize:'24px'}}/>
             </button>
               
-            <button className='sidenav_button2' onClick={handleNofiClick}>
+            <button className='sidenav_button2 search' onClick={handleNofiClick}>
               <FavoriteBorderIcon className='buts' />
             </button>
             <button className='sidenav_button2'>
               <AddCircleOutlineIcon className='buts'/>
             </button>
-            <div className='sidenav_more'>
+            <div className="profileava">
+              <Avatar 
+              src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg'
+              alt='' 
+              style={{margin:'7px 20px 0 0'}} />
+              </div>
+            <div className='sidenav_more anten'>
             <button className='sidenav_button2' >
               <MenuIcon className='buts'/>
             </button>
-            </div>
+          </div>
             
         </div>
         </div>
@@ -343,13 +377,13 @@ return(
         <div className="messbenphai" >
             <div className="danhsachchat">
                 <div className="daudanhsach">
-                    <span className="tenchunickmess">s.pinkduck_03</span>
+                    <span className="tenchunickmess anten">s.pinkduck_03</span>
                     <PiNotePencil
                     className="noteicon"
                     style={{fontSize:'30px',cursor:'pointer'}}
                     />
                 </div>
-                <div className="giuadanhsach">
+                <div className="giuadanhsach anten">
                     <span className="mesmid">
                         Messages
                     </span>
@@ -368,7 +402,7 @@ return(
                             src={po.ava}
                             alt=""
                             />
-                            <div className="tennick1">
+                            <div className="tennick1 anten">
                             <span className="tennickchat">
                             {po.ten2}
                             </span>
@@ -383,9 +417,9 @@ return(
                 </div>
             </div>
         </div>
-        <div className="messbentrai" style={{width:'100%'}} onClick={handleClose}>
+        <div className="messbentrai" onClick={handleClose}>
         {selectedNick ? (
-          <>
+          <div style={{position:'relative',width:'100%',height:'100%'}}>
           <div className="fullbenphai">
             <div className="chatbar">
             <div className="nick"
@@ -414,79 +448,79 @@ return(
              
             <div
   className="dinbox"
-  style={{
-    padding: "10px",
-    display: "flex",
-    flexDirection: "column"
-  }}
 >
   {selectedNick.chat.map((message, index) => (
     <div
       key={index}
       className="inbox"
       style={{
-        padding: "10px",
+        padding: "2px 10px 2px 10px",
         display: "flex",
         flexDirection: "column"
       }}
     >
       <div
-        className="message home"
-        style={{
-          padding: "10px 15px",
-          backgroundColor: "rgb(55, 151, 240)",
-          borderRadius: "20px",
-          marginBottom: "10px",
-          maxWidth: "30vw",
-          width: "fit-content",
-          display: "inline-block",
-          marginLeft: "auto",
-          textAlign: "right",
-          color:'white'
-        }}
+        className="message_home"
       >
         {message.home}
       </div>
       <div
-        className="message away"
-        style={{
-          marginLeft: "0",
-          textAlign: "left"
-        }}
-      >
-        <div className="away"
-        style={{display:'flex',
-        flexDirection:'row'
-    }}
-        
-        >
-        <Avatar src={selectedNick.ava} style={{marginRight:'10px'}}>
+        className="message_away"
 
-        </Avatar>
-        <div className="span" style={{padding: "10px 15px",
-          backgroundColor: "lightgrey",
-          borderRadius: "20px",
-          marginBottom: "10px",
-          maxWidth: "30vw",
-          width: "fit-content",
-          display: "inline-block",}}>
-            {message.away}
-        </div>
-        </div>
+      >
+        {message.away?(
+          <div className="away"
+          style={{display:'flex',
+          flexDirection:'row'
+      }}
+          
+          >
+          <Avatar src={selectedNick.ava} style={{marginRight:'10px'}}>
+  
+          </Avatar>
+          <div className="span" >
+              {message.away}
+          </div>
+          </div>
+        ):(
+          <></>
+        )}
       </div>
     </div>
       ))}
 </div>
             
           </div>
-          <div className="inputmess"
-          style={{border:'1px solid lightgrey', borderRadius:'100px',padding:'10px',display:'grid',gridTemplateColumns:''}}
-          >
-            <input type="text" placeholder="Message" 
-            style={{border:'none'}}
-            />
+          <div className="" style={{padding:'0 20px 0 20px',position:'absolute',bottom:'20px',left:'0',right:'0'}}>
+          <div className="inputmess">
+              <BsEmojiSmile style={{ fontSize: '27px', marginLeft: '7px', cursor: 'pointer' }} />
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  placeholder="Message..."
+                  style={{ border: 'none', outline: 'none', width: '100%' }}
+                  value={commentText}
+                  onChange={handleSendText}
+                />
+                {IsSend ? (
+                  <div className="iconmess">
+                    <MdOutlineKeyboardVoice style={{ fontSize: '27px', marginRight: '10px' }} />
+                    <IoImageOutline style={{ fontSize: '27px', marginRight: '10px' }} />
+                    <FavoriteBorderIcon style={{ fontSize: '27px', marginRight: '10px' }} />
+                  </div>
+                ) : (
+                  <input
+                    type="submit"
+                    className="sendbutton"
+                    style={{ border: 'none', backgroundColor: 'white', fontWeight: '700', color: '#318CE7' }}
+                    value="Send"
+                    onClick={handleSendSubmit}
+                  />
+                )}
+              </div>
+            </div>
           </div>
-          </>
+          </div>
         ) : (
           <div className="noselect"
           style={{}}

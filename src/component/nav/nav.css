@@ -1,7 +1,4 @@
-.nav_logo{
-    width: 120px;
-    margin: 20px;
-}
+
 
 .Nav{
     position: fixed;
@@ -93,7 +90,6 @@
     border-radius: 15px;
     cursor: pointer;
     width: 100%;
-    background-color: lightgray;
   }
   .AnotherNav{
     display: flex;
@@ -216,10 +212,4 @@
     color: gray;
     font-size: 14px;
     background-color: none;
-  }
-  .igicon{
-    cursor: pointer;
-  }
-  .igicon:hover{
-    transform: scale(1.2);
   }

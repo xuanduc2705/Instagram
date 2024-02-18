@@ -121,6 +121,9 @@ return(
         alt=''
         />
     </Link>
+    <Link to='/home' className='igiconic'>
+          <InstagramIcon />
+    </Link>
         
         <div className='nav_buttons'>
               <Link to='/home' style={{ textDecoration: 'none' }}>
@@ -129,7 +132,7 @@ return(
              <span className='spann' >Home</span>
             </button>
             </Link>
-            <button className='sidenav_button'onClick={handleSearchClick} >
+            <button className='sidenav_button search'onClick={handleSearchClick} >
               <SearchIcon/>
               <span className='spann'>Search</span>
             </button>
@@ -165,7 +168,7 @@ return(
               <span className='spann'>Messages</span>
             </button>
             </Link>
-            <button className='sidenav_button' onClick={handleNofiClick}>
+            <button className='sidenav_button search' onClick={handleNofiClick}>
               <FavoriteBorderIcon/>
               <span className='spann'>Notifications</span>
             </button>
@@ -173,8 +176,14 @@ return(
               <AddCircleOutlineIcon/>
               <span className='spann'>Create</span>
             </button>
+            <div className="profileava">
+              <Avatar 
+              src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg'
+              alt='' 
+              style={{margin:'7px 40px 0 0'}} />
+              </div>
             <div className='sidenav_more'>
-            <button className='sidenav_button' onClick={handleNavClose}>
+            <button className='sidenav_button menu' onClick={handleNavClose}>
               <MenuIcon/>
               <span className='spann'>More</span>
             </button>
@@ -442,8 +451,8 @@ return(
         <div className="reelslist" onClick={handleClose}>
         <div className="baidanggreel">
           {reel.map((post, index) => (
-            <div className="baidangg1">
-              <div className="baidangg11" style={{height:'320px'}}>
+            <div className="baidang1">
+              <div className="baidang11" >
               <img key={index} src={post.avatar} className="heto" alt="" />
                 <h3 className="reelview">{post.like}</h3>
                 <PlayArrowRoundedIcon className="reelicon" style={{fontSize:'40px'}}/>

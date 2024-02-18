@@ -175,7 +175,7 @@ function Reels() {
              <span className='spann' >Home</span>
             </button>
             </Link>
-            <button className='sidenav_button'onClick={handleSearchClick} >
+            <button className='sidenav_button search'onClick={handleSearchClick} >
               <SearchIcon/>
               <span className='spann'>Search</span>
             </button>
@@ -211,7 +211,7 @@ function Reels() {
               <span className='spann'>Messages</span>
             </button>
             </Link>
-            <button className='sidenav_button' onClick={handleNofiClick}>
+            <button className='sidenav_button search' onClick={handleNofiClick}>
               <FavoriteBorderIcon/>
               <span className='spann'>Notifications</span>
             </button>
@@ -219,8 +219,14 @@ function Reels() {
               <AddCircleOutlineIcon/>
               <span className='spann'>Create</span>
             </button>
+            <div className="profileava">
+              <Avatar 
+              src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg'
+              alt='' 
+              style={{margin:'7px 40px 0 0'}} />
+              </div>
             <div className='sidenav_more'>
-            <button className='sidenav_button' onClick={handleNavClose}>
+            <button className='sidenav_button menu' onClick={handleNavClose}>
               <MenuIcon/>
               <span className='spann'>More</span>
             </button>
@@ -360,7 +366,7 @@ function Reels() {
               <AddCircleOutlineIcon className='buts'/>
             </button>
             <div className='sidenav_more'>
-            <button className='sidenav_button2' >
+            <button className='sidenav_button2 menu' >
               <MenuIcon className='buts'/>
             </button>
             </div>

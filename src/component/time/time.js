@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-import Modal from '../time/modal';
+
 import '../time/time.css'
 import Suggestion from './suggestion';
 import Story from './story';
@@ -10,10 +10,25 @@ import { useState,useEffect } from 'react';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { getTokenFromSessionStorage } from '../Util/storageUtil';
 import { pot } from '../../data/homepost';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { removeTokenFromSessionStorage } from '../Util/storageUtil';
 
 function TimeLine() {
-  const [token, setToken] = useState('');
+  
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [token, setToken] = useState('');
+  const handleLogout = () => {
+    // Remove the token from session storage
+    removeTokenFromSessionStorage();
+    setShow(false)
+  };
   useEffect(() => {
     const storedToken = getTokenFromSessionStorage();
     setToken(storedToken);
@@ -83,7 +98,7 @@ setIsHovered(false);
     setNewSto(""); // Clear the input value after adding the item
   };
   return (
-    <div>
+    <div className='timeline'>
     <div className="time">
         <div className='timeline_left'>
         <div className='story_left'>
@@ -121,32 +136,59 @@ setIsHovered(false);
           </div>
         </div>
         <div className='timelibe_right'>
-        <div className='story-right'>
         <div className='profile'>
-      <div className='pro'>
-        <div className='file'>
-              <span className='avat'>
-                <Avatar>
-                <img src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg' className='hero' alt=''/>
-                </Avatar>
-              </span>
-              <div className='profileinfo'>
-                <Link to={`/detail/${name}`}  className='usernamee' >{name}</Link>
-                <span className='relationn'>🅳🆄🅺🅴</span>
-              </div>
-              </div>
-              <button className='Follow_button' onClick={() => {
-          setModalOpen(true);
-        }}>Switch</button>
-              </div>
-              
-          </div>
-          
+          <div className='pro'>
+          <div className='file'>
+                <span className='avat'>
+                  <Avatar>
+                  <img src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg' className='hero' alt=''/>
+                  </Avatar>
+                </span>
+                <div className='profileinfo'>
+                  <Link to={`/detail/${name}`}  className='usernamee' >{name}</Link>
+                  <span className='relationn'>🅳🆄🅺🅴</span>
+                </div>
+                </div>
+                <button className='Follow_button'onClick={handleShow} >Switch</button>
+                </div>
+                
         </div>
             <Suggestion/>
         </div>
-        {modalOpen && <Modal setOpenModal={setModalOpen} />}
+       
     </div>
+    <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title style={{fontSize:'14px',textAlign:'center',marginLeft:'36%'}}>Switch accounts</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{height:'160px'}}>
+
+        <span className='avatt' >
+           
+           <div className="thongtin" style={{display:'flex',flexDirection:'row',marginLeft:"10px"}}>
+           <Avatar className='hero'>
+               <img src='https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg' style={{width:'100%'}}  alt=''/>
+               </Avatar>
+               <div className='profileinfoo'
+                 style={{display:'flex',flexDirection:'row',width:'80%',marginLeft:'10px',marginTop:'4px'}}
+               >
+               <Link to={`/detail/${name}`}  className='usernameee'style={{textDecoration:'none',color:'black', marginRight:'6px'}} >{name}
+               </Link>
+               <CheckCircleIcon className="checkicon"/>
+              
+             </div>
+           </div>
+          
+             </span>
+
+        </Modal.Body>
+        <Modal.Footer>
+        <Link to={`/login`} style={{textDecoration:'none', marginRight:'6px',margin:'0 auto'}} className='usernameeee'onClick={handleLogout}>
+          <span className="logout"  >Log in to an existed account</span>
+          </Link>
+
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
