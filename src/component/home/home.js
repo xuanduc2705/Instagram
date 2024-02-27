@@ -22,6 +22,7 @@ import SlideshowTwoToneIcon from '@mui/icons-material/SlideshowTwoTone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import TimeLine from "../time/time";
 import '../home/Home.css'
+import { getTokenFromSessionStorage } from '../Util/storageUtil';
 
 function Home() {
   const explore=true
@@ -66,7 +67,7 @@ function Home() {
   const [showAnotherNav, setShowAnotherNav] = useState(false);
   const [showAnotherNavi, setShowAnotherNavi] = useState(false);
   const [query, setQuery] = useState("");
-
+  console.log(getTokenFromSessionStorage());
   const handleSearchClick = () => {
     setIsNavVisible(false);
     setShowAnotherNav(true);

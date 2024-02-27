@@ -41,8 +41,8 @@ function Login(){
           } else {
             setShowError(true)
             saveTokenToSessionStorage(res.data.token);
-            navigate("/home");
             window.location.reload();
+
           }
         } catch (error) {
           console.error("An error occurred:", error);

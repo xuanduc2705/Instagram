@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [change,setChange] = useState(false)
   useEffect(() => {
-    const token = getTokenFromSessionStorage();
+    const token = localStorage.getItem("token");
     if (token) {
       setChange(true);
     }
@@ -23,11 +23,11 @@ function App() {
       <React.StrictMode>
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Login/> } />
-    <Route path='/home' element={change ?<Home/>:<Login/>} />
+    <Route path="/" element={change ?<Navigate to={'/home'}/>:<Navigate to={'/login'}/> } />
+    <Route path='/home' element={change ?<Home/>:<Navigate to={'/login'}/>} />
     <Route path='/detail/' element={change ?<Detail/>:<Navigate to={'/login'}/>} />
     <Route path="/detail/:name" element={change ?<Detail />:<Navigate to={'/login'}/>} /> 
-    <Route path='/login' element={change ?<Login/>:<Login/>}/>
+    <Route path='/login' element={change ?<Navigate to={'/'}/>:<Login/>}/>
     <Route path='/explore' element={change ?<Explore/>:<Navigate to={'/login'}/>}></Route>
     <Route path='/reels' element={change ?<Reels/>:<Navigate to={'/login'}/>}></Route>
     <Route path='/message' element={change ?<Message/>:<Navigate to={'/login'}/>}></Route>

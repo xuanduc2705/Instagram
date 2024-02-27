@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-
+import { useNavigate } from "react-router-dom";
 import '../time/time.css'
 import Suggestion from './suggestion';
 import Story from './story';
@@ -20,14 +20,15 @@ function TimeLine() {
   
 
   const [show, setShow] = useState(false);
-
+  const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [token, setToken] = useState('');
   const handleLogout = () => {
     // Remove the token from session storage
-    removeTokenFromSessionStorage();
-    setShow(false)
+    localStorage.removeItem("token");
+    window.location.reload();
+    navigate("/login")
   };
   useEffect(() => {
     const storedToken = getTokenFromSessionStorage();
