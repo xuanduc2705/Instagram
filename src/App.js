@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './index.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,6 +10,8 @@ import Reels from './component/reels/reels.js';
 import Message from './component/message/message.js';
 import { getTokenFromSessionStorage } from "./component/Util/storageUtil.js";
 import { useState, useEffect } from 'react';
+import {publicRoutes,privateRoutes} from './route/index.js';
+import Layout from './layout/index.js';
 function App() {
   const [change,setChange] = useState(false)
   useEffect(() => {
@@ -20,17 +22,41 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={change ?<Navigate to={'/home'}/>:<Navigate to={'/login'}/> } />
-    <Route path='/home' element={change ?<Home/>:<Navigate to={'/login'}/>} />
-    <Route path='/detail/' element={change ?<Detail/>:<Navigate to={'/login'}/>} />
-    <Route path="/detail/:name" element={change ?<Detail />:<Navigate to={'/login'}/>} /> 
-    <Route path='/login' element={change ?<Navigate to={'/'}/>:<Login/>}/>
-    <Route path='/explore' element={change ?<Explore/>:<Navigate to={'/login'}/>}></Route>
-    <Route path='/reels' element={change ?<Reels/>:<Navigate to={'/login'}/>}></Route>
-    <Route path='/message' element={change ?<Message/>:<Navigate to={'/login'}/>}></Route>
+      {change?(
+        <>
+        {[...privateRoutes].map((routes,index)=>{
+        const Page = routes.component
+        return <Route
+        key={index}
+        path={routes.path}
+        element={
+          <>
+          <Layout>
+            <Page/>
+          </Layout>
+          </>
+        }
+        />
+      })}
+        </>
+      ):(
+        <>
+        {[...publicRoutes].map((routes,index)=>{
+        const Page = routes.component
+        return <Route
+        key={index}
+        path={routes.path}
+        element={
+          <>
+            <Page/>
+          </>
+        }
+        />
+      })}</>
+      )}
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import Modal from '../time/modal';
 
-import '../time/profile.css';
-
 
 function Profile() {
   const name = 's.pinkduck_03';

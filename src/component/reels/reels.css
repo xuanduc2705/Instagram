@@ -1,8 +1,6 @@
 .reelpage {
   overflow: hidden;
 overflow-x: hidden;
-  display: grid;
-  grid-template-columns: 15% 85%;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -83,14 +81,6 @@ object-fit: cover;
   }
 
   @media screen and (max-width: 500px) {
-    .reelnav{
-      width: 100%;
-        position: fixed;
-        bottom: 60px;
-        left: 0;
-        right: 0;
-        z-index: 999;
-    }
     .reelpage {
       overflow: hidden;
     overflow-x: hidden;

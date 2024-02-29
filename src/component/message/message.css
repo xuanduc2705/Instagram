@@ -116,7 +116,6 @@
 .sendbutton:hover{
     color: grey;
 }
-@media screen and (max-width: 2000px) {
     .message{
         display: flex;
         flex-direction: row;
@@ -157,7 +156,6 @@
         height: 800px;
         display: flex;
         flex-direction: row;
-        margin-left: 70px;
     }
     .inputmess{
         border:1px solid lightgrey;
@@ -166,9 +164,14 @@
         display:flex;
         flex-direction: row;
     }
-}
-
-
+    .fullbenphai {
+        overflow: hidden;
+      }
+      
+      .dinbox {
+        overflow-y: auto;
+        max-height: 700px;
+      }
 @media screen and (max-width: 1000px) {
     .anten{
         display: none;
@@ -180,7 +183,6 @@
         border-left: 1px solid lightgrey;
         display: flex;
         flex-direction: row;
-        margin-left: 70px;
     }
     .noteicon{
         margin: 0 auto;
@@ -235,7 +237,7 @@
       }
     
 }
-@media (max-width: 525px) {
+@media (max-width: 550px) {
     .tennick1{
         display: none;
     }

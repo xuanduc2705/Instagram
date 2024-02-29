@@ -1,6 +1,5 @@
 import { Avatar } from '@mui/material';
-import '../time/suggestion.css'
-
+import '../time/index.css'
 function Acc({name,ava}) {
   return (
     <div className='suggestion_username'>

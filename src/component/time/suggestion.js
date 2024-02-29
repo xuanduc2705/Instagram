@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import '../time/suggestion.css'
 import Acc from './acc';
 
 function Suggestion() {

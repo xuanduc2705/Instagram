@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './post.css'
 import { Avatar } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -86,7 +85,7 @@ const [commentText, setCommentText] = useState('');
     
   };
   return (
-    <div className="post">
+    <div className="post" style={{marginBottom:'20px'}}>
         <div className='post_header'>
             <div className='postheader_author'>
             <Avatar>

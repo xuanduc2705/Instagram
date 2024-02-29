@@ -20,10 +20,6 @@ function redirectM(){
 }
 function Login(){
     const navigate = useNavigate();
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -41,6 +37,7 @@ function Login(){
           } else {
             setShowError(true)
             saveTokenToSessionStorage(res.data.token);
+            navigate("/home")
             window.location.reload();
 
           }

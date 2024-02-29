@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-import "./modal.css";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { removeTokenFromSessionStorage } from '../Util/storageUtil';
 

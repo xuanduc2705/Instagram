@@ -1,0 +1,610 @@
+.modalBackground {
+    width: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 200px;
+  }
+  
+  .modalContainer {
+    width: 50%;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid lightgrey;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+  .thongtin{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+  .Switch{
+   margin:0 auto;
+   font-size: 18px;
+   font-weight: 600;
+  }
+  .avatt{
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+    margin-bottom: 60px;
+  }
+  
+  .heror>img{
+    width: 100%;
+}
+.usernameee{
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    position: relative;
+}
+.checkicon{
+    margin-top: 7px;
+    margin-left: 20px;
+}
+.usernameeee{
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    color: blue;
+    
+}
+.modal {
+    /* Styles for the modal */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(1px);
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 999;
+  }
+
+
+  .post{
+    width: 80%;
+    margin: 0 auto;
+}
+.post_image{
+    width: 100%;
+}
+@media (max-width: 500px) {
+    .post{
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+  }
+.done{
+    color:royalblue;
+    margin-left: 5px;
+    font-size: 8px;
+    
+}
+.post_header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.postheader_author{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+}
+.postheader_author>span{
+    font-size: 15px;
+    color: grey;
+}
+.post_image>img{
+    width: 100%;
+    border-radius: 6px;
+    border: 0.6px solid grey;
+}
+.post_image>img:hover{
+    cursor: pointer;
+}
+.post_footerIcons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.postIcons{
+    padding: 6px;
+    transition: filter 0.3s ease;
+}
+.postIconss{
+    padding: 6px;
+    color: red;
+    transition: filter 0.3s ease;
+}
+.postIconss:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.postIcons:hover{
+    cursor: pointer;
+    filter: blur(0.8px);
+}
+.post_author:hover{
+    cursor: pointer;
+}
+.post_author{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.heo{
+    width: 100%;
+}
+.pointer{
+    cursor: pointer;
+}
+.post_author2:hover{
+    cursor: pointer;
+}
+.post_author2{
+    font-weight: 600;
+}
+.like{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+  .anhten{
+    display: flex;
+    flex-direction: row;
+}
+.anhten.herorr{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.coverimagee{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.infonamemodal{
+    margin-left: 15px;
+    margin-top: 18px;
+    font-size: 18px;
+}
+.donemodal{
+    margin-left: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.thongso{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.thpost{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.solieu{
+    font-size: 17px;
+    font-weight: 700;
+
+}
+.tensolieu{
+    font-size: 15px;
+    font-weight: 400;
+}
+.baanh{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    
+}
+.he{
+    width: 97%;
+    height: 130px;
+    transition: transform 0.3s ease;
+    
+}
+.he:hover{
+    transform: scale(1.1);
+
+}
+.buttonfoot{
+    padding: 20px;
+    text-align: center;
+}
+.butt1{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    margin-right: 15px;
+    background-color:#00bfff;
+}
+.butt1:hover{
+    background-color: #0073cf;
+    cursor: pointer;
+}
+.butt2{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    margin-right: 15px;
+}
+.butt2:hover{
+    background-color:lightgrey;
+    cursor: pointer;
+}
+.divduoi{
+    padding-left: 0px;
+}
+.comment{
+    padding-top: 5px;
+}
+.viewall{
+    color: grey;
+    cursor: pointer;
+}
+.commentt{
+    margin-top: 2px;
+    font-size: 15px;
+    margin-left: 3px;
+}
+.comment-input{
+    margin-top: 5px;
+    padding-top: 5px;
+    border: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.inputcmt {
+    border: none;
+    outline: none;
+    width: 500px;
+  }
+  
+  .inputcmt:focus,
+  .inputcmt:focus-within {
+    border: none;
+    outline: none;
+  }
+.comment-author{
+    font-weight: 600;
+    margin-right: 10px;
+}
+.post_authorr:hover{
+    cursor: pointer;
+}
+.post_authorr{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    position: relative;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+.submit-button {
+    display: none;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    color: #0073cf;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .submit-button:hover{
+    color: #00bfff;
+  }
+  .relationn{
+    color: grey;
+    font-size: 18px;
+}
+.hero{
+    width: 100%;
+}
+.profile{
+    margin-top: 50px;
+    width: 370px;
+    margin-left: 80px;
+}
+.pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profileinfo{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.file{
+    display: flex;
+    flex-direction: row;
+}
+.hero:hover{
+    cursor: pointer;
+}
+.usernamee{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.usernamee:hover{
+    cursor: pointer;
+}
+
+.heto{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+.avatar:hover{
+  cursor: pointer;
+}
+.story{
+    margin: 30px 40px 10px 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tenn{
+   font-size: 13px;
+}
+.imagecover{
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.coverimage{
+    width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  border: 2px solid #e95950;
+  overflow: hidden;
+}
+.suggestion{
+    margin-top: 30px;
+    margin-right: 40px;
+    width: 320px;
+    margin-left: 5px;
+}
+.suggestion_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sug{
+    color: grey;
+    margin-left: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.see{
+    margin-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.username_left{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+.username_info{
+    display: flex;
+    flex-direction: column;
+}
+.relation{
+    color: grey;
+    font-size: 12px;
+}
+.suggestion_username{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.Follow_button{
+    color: dodgerblue;
+    font-weight: bold;
+    background: 0;
+    border: 0;
+}
+.Follow_button:hover{
+    cursor: pointer;
+}
+.avater{
+    margin-right: 10px;
+}
+.heo{
+    width: 100%;
+}
+.see:hover{
+    cursor: pointer;
+}
+  
+.time{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.timeline_post{
+    width: 100%;
+}
+.story{
+    margin: 30px 40px 10px 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+.timeline_left{
+    width: 710px;
+    flex: 0.7;
+}
+.timeline_right{
+    width: 400px;
+    flex: 0.3;
+}
+@media (max-width: 900px) {
+    .story_left {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE, Edge */
+        margin-left: 0px;
+      }
+    
+      .story_left::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+  }
+.story_left {
+    position: relative;
+  }
+  
+  .story_left:hover .nextIcon {
+    opacity: 1;
+    background-color: aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .nextIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+    opacity: 0;
+    font-size: 24px;
+  }
+  .relationn{
+    color: grey;
+    font-size: 18px;
+}
+.hero{
+    width: 100%;
+}
+.profile{
+    margin-top: 50px;
+    width: 300px;
+    margin-left: 30px;
+}
+.pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profileinfo{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.file{
+    display: flex;
+    flex-direction: row;
+}
+.hero:hover{
+    cursor: pointer;
+}
+.usernamee{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.usernamee:hover{
+    cursor: pointer;
+}
+

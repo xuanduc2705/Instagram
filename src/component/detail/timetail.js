@@ -82,7 +82,7 @@ function Timetail() {
     </div>
     <Modal size="xl"
         aria-labelledby="example-modal-sizes-title-lg" show={show} onHide={handleClose} animation={false} centered >
-      <div className="modal-container" style={{width:'1100px',height:'700px'}}>
+      <div className="modal-container" style={{width:'1100px',height:'700px',background:'none'}}>
         <Modal.Body style={{height:"100%"}}>
           <div className="modalbody" style={{height:"100%",display:"flex",flexDirection:'row'}}>
             <div className="modalleft" style={{width:'65%',justifyContent:'center',alignItems:'center',display:'flex',height:"100%",backgroundColor:'black'}}>

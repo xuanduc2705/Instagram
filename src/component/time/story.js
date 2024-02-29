@@ -1,5 +1,4 @@
 import React from 'react';
-import '../time/story.css'
 
 function Story({stoava,name}) {
   return (

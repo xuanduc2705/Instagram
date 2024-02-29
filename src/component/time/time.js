@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import '../time/time.css'
+import '../time/index.css'
 import Suggestion from './suggestion';
 import Story from './story';
 import Post from './post';
@@ -10,22 +10,16 @@ import { useState,useEffect } from 'react';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { getTokenFromSessionStorage } from '../Util/storageUtil';
 import { pot } from '../../data/homepost';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { removeTokenFromSessionStorage } from '../Util/storageUtil';
 
 function TimeLine() {
-  
-
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [token, setToken] = useState('');
   const handleLogout = () => {
-    // Remove the token from session storage
     localStorage.removeItem("token");
     window.location.reload();
     navigate("/login")
@@ -40,20 +34,6 @@ function TimeLine() {
     setComments([...comments, newComment]);
   };
   const name = 's.pinkduck_03';
-  const [modalOpen, setModalOpen] = useState(false);
-  const [newSto, setNewSto] = useState("");
- 
-
-const [isHovered, setIsHovered] = useState(false);
-
-const handleMouseEnter = () => {
-setIsHovered(true);
-};
-
-const handleMouseLeave = () => {
-setIsHovered(false);
-};
-
   const[stos,setStos] = useState([
     {
       stoava:'https://i.ibb.co/qkhmRLp/418758070-2278354819026761-6414880944565960628-n.jpg',
@@ -84,20 +64,6 @@ setIsHovered(false);
       name:'cristiano'
     },
   ])
-  const [likeCount, setLikeCount] = useState(pot.map(() => false));
-  const handleAddSto = () => {
-    if (newSto.trim() === "") {
-      return; // Skip if the input is empty or contains only whitespace
-    }
-  
-    const newItem = {
-      stoava: newSto,
-      name: "Custom Name"
-    };
-  
-    setStos((prevStos) => [...prevStos, newItem]);
-    setNewSto(""); // Clear the input value after adding the item
-  };
   return (
     <div className='timeline'>
     <div className="time">
@@ -128,9 +94,9 @@ setIsHovered(false);
               pos1={post.pos1}
               pos2={post.pos2}
               pos3={post.pos3}
-              cmt={comments} onAddComment={handleAddComment}
+              cmt={comments} 
+              onAddComment={handleAddComment}
               />
-              
             ))}
 
 

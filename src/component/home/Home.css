@@ -92,6 +92,12 @@
     .profileava{
       display: inline;
     }
+    .profileava:hover{
+      transform: scale(1.1);
+    }
+    .timestory{
+      margin-left: 20px;
+    }
     .homepage {
       display: flex;
       position: relative;
@@ -103,15 +109,6 @@
       margin-left: 0;
     }
   
-    .homepage_nav {
-      width: 100%;
-      position: fixed;
-      bottom: 60px;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 999;
-    }
     
     .Nav {
       display: flex;
@@ -128,6 +125,16 @@
       margin-left: 20px;
         grid-template-columns: 16% 16% 16% 16% 16% 16%;
       width: 100%;
+    }
+    .messnav {
+      display: flex;
+      flex-direction: row;
+      border-top: 1px solid grey;
+      background-color: white;
+      width: 100%;
+    }
+    .sidenav_more{
+      display: none;
     }
     .igiconic{
       display: none;

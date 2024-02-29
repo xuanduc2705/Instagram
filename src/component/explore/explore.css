@@ -1,10 +1,6 @@
 .reelslist{
     padding-top: 30px;
 }
-.explore{
-    display: grid;
-    grid-template-columns: 15% 85%;
-}
 @media screen and (max-width: 500px) {
     .reelnav{
       width: 100%;
