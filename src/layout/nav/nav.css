@@ -1,261 +1,256 @@
-
-
-.Nav{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1;
-    transition: transform 0.3s ease;
+.Nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
-.sidenav_button{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: 0;
-    border: 0;
-    margin: 5px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 15px;
-    width: 100%;
+.sidenav_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: 0;
+  border: 0;
+  margin: 5px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+  width: 100%;
 }
-.sidenav_button:hover{
-    cursor: pointer;
-    background-color:lightgray;
+.sidenav_button:hover {
+  cursor: pointer;
+  background-color: lightgray;
 }
-.sidenav_button2{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: 0;
-    border: 0;
-    margin: 5px 10px 10px 0px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 15px;
-    width: 100%;
+.sidenav_button2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: 0;
+  border: 0;
+  margin: 5px 10px 10px 0px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+  width: 100%;
 }
-.sidenav_button2:hover{
-    cursor: pointer;
+.sidenav_button2:hover {
+  cursor: pointer;
 }
-.spann{
-    text-decoration: none;
-    color: black;
-    font-size: 17px;
-    font-weight: bolder;
-    margin-left: 12px;
+.spann {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-left: 12px;
 }
-.buts:hover{
-    transform: scale(1.2);
+.buts:hover {
+  transform: scale(1.2);
 }
 
-.sidenav_more{
-    position: fixed;
-    bottom: 3px;
+.sidenav_more {
+  position: fixed;
+  bottom: 3px;
 }
 
-  
-  .Nav.hide-nav {
+.Nav.hide-nav {
+  transform: translateX(-100%);
+}
+.slide-in-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 470px;
+  height: 100%;
+  overflow: hidden;
+  animation: slide-in 0.5s forwards;
+  border: 1px lightgray solid;
+  z-index: 9999; /* Ensures that the slide-in-nav appears above other components */
+  background-color: white;
+  border-radius: 18px;
+}
+
+@keyframes slide-in {
+  0% {
     transform: translateX(-100%);
   }
-  .slide-in-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 470px;
-    height: 100%;
-    overflow:hidden;
-    animation: slide-in 0.5s forwards;
-    border: 1px lightgray solid;
-    z-index: 9999; /* Ensures that the slide-in-nav appears above other components */
-    background-color: white;
-    border-radius: 18px;
+  100% {
+    transform: translateX(0);
   }
-  
-  @keyframes slide-in {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  .sidenav_button23{
+}
+.sidenav_button23 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: 0;
+  border: 0;
+  margin: 5px 10px 10px 10px;
+  padding: 10px 15px 10px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+.AnotherNav {
+  display: flex;
+  flex-direction: row;
+}
+.benphai {
+  border-left: 1px solid lightgray;
+  height: 1400px;
+}
+.bentraii {
+  width: 80px;
+  height: 100%;
+}
+.benphaitren {
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+.searchinput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.x {
+  font-size: 10px;
+  cursor: pointer;
+}
+.x:hover {
+  transform: scale(1.2);
+}
+.inputsize {
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.benphaitren > h1 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.benphaiduoi {
+  border-top: 1px solid black;
+  padding-left: 30px;
+  padding-top: 12px;
+}
+.recent {
+  color: gray;
+  font-weight: 600;
+  font-size: 16px;
+}
+.result {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+}
+.listt {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+}
+.listItem {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 7px;
+}
+.listItem:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.tensearch {
+  margin-left: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.searcher {
+  margin-top: 80%;
+  text-align: center;
+}
+.fullnamesearch {
+  color: grey;
+  margin-left: 12px;
+}
+.namesearch {
+  display: flex;
+  flex-direction: column;
+}
+.messicon {
+  font-size: 23px;
+}
+.nofi {
+  margin-bottom: 20px;
+}
+.ttreq {
+  width: 350px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.ttreq:hover {
+  border-radius: 10px;
+  background-color: lightgray;
+}
+.reqtt {
+  font-weight: 700;
+  font-size: 14px;
+}
+.tongtineq {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.markk {
+  color: gray;
+  font-size: 14px;
+  background-color: none;
+}
+.showing {
+  display: none;
+}
+@media screen and (max-width: 1100px) {
+  .showing {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: 0;
-    border: 0;
-    margin: 5px 10px 10px 10px;
-    padding: 10px 15px 10px 10px;
-    border-radius: 15px;
+  }
+  .sidenav_button:hover {
     cursor: pointer;
+    background: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .sidebar {
     width: 100%;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
   }
-  .AnotherNav{
-    display: flex;
-    flex-direction: row;
+  .messsidebar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
   }
-  .benphai{
-    border-left: 1px solid lightgray;
-    height: 1400px;
-  }
-  .bentraii{
-    width: 80px;
+  .bentraii {
+    width: 100%;
     height: 100%;
+    margin-left: 20px;
   }
-  .benphaitren{
-    padding-left: 30px;
-    padding-bottom: 30px;
-  }
-  .searchinput{
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  .x{
-    font-size: 10px;
-    cursor: pointer;
-  }
-  .x:hover{
-   transform: scale(1.2);
-  }
-  .inputsize{
-    border: 1px solid grey;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 300px;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .benphaitren>h1{
-    font-size: 28px;
-    font-weight: 500;
-  }
-  .benphaiduoi{
-    border-top: 1px solid black;
-    padding-left: 30px;
-    padding-top: 12px;
-  }
-  .recent{
-    color: gray;
-    font-weight: 600;
-    font-size: 16px;
-  }
-  .result{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 25px;
-  }
-  .listt{
-    display: flex;
-    flex-direction: column;
-    padding-left: 0px;
-  }
-  .listItem{
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    padding: 7px;
-  }
-  .listItem:hover{
-    cursor: pointer;
-    background-color: lightgray;
-    border-radius: 10px;
-  }
-  .tensearch{
-    margin-left: 12px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .searcher{
-    margin-top: 80%;
-    text-align: center;
-  }
-  .fullnamesearch{
-    color: grey;
-    margin-left: 12px;
-  }
-  .namesearch{
-    display: flex;
-    flex-direction: column;
-  }
-  .messicon{
-    font-size: 23px;
-  }
-  .nofi{
-    margin-bottom: 20px;
-
-  }
-  .ttreq{
-    width: 350px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-  }
-  .ttreq:hover{
-    border-radius: 10px;
-    background-color: lightgray;
-  }
-  .reqtt{
-    
-    font-weight: 700;
-    font-size: 14px;
-  }
-  .tongtineq{
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-  .markk{
-    color: gray;
-    font-size: 14px;
-    background-color: none;
-  }
-  .showing{
+  .hidding {
     display: none;
   }
-  @media screen and (max-width:1100px) {
-      .showing{
-        display: flex;
-      }
-      .sidenav_button:hover{
-        cursor: pointer;
-        background:none;
-    }
+  .showing {
+    display: none;
   }
-  @media screen and (max-width:550px) {
-    .sidebar{
-      width: 100%;
-      position: fixed;
-      bottom: 60px;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 999;
-    }
-    .messsidebar{
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 999;
-    }
-    .bentraii{
-      width: 100%;
-      height: 100%;
-      margin-left: 20px;
-    }
-    .hidding{
-      display: none;
-    }
-    .showing{
-      display: none;
-    }
-    .messshowing{
-      display: none;
-    }
+  .messshowing {
+    display: none;
   }
+}

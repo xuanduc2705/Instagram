@@ -1,1 +1,1 @@
-export const nofi = [{}]
+export const nofi = [{}];

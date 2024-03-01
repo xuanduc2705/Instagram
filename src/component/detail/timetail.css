@@ -1,181 +1,185 @@
-.timetailpage{
-    text-align: center;
-    width: 100%;
+.timetailpage {
+  text-align: center;
+  width: 100%;
 }
-.buto1{
-    margin-right: 60px;
-    border: none;
-    background-color: white;
-    padding: 20px;
+.buto1 {
+  margin-right: 60px;
+  border: none;
+  background-color: white;
+  padding: 20px;
 }
-.buto1:hover{
-    cursor: pointer;
+.buto1:hover {
+  cursor: pointer;
 }
-.baidang{
-    margin-top: 4px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+.baidang {
+  margin-top: 4px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
-.baidang1{
-    padding: 1px;
+.baidang1 {
+  padding: 1px;
 }
-.baidang11{
-    aspect-ratio: 1;
-    width: 100%;
-    position: relative;
+.baidang11 {
+  aspect-ratio: 1;
+  width: 100%;
+  position: relative;
   display: inline-block;
-
 }
-.baidang11{
-    cursor: pointer;
+.baidang11 {
+  cursor: pointer;
 }
-.baidangg{
-    margin-top: 4px;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+.baidangg {
+  margin-top: 4px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
 }
-.baidangg1{
-    padding: 2px;
+.baidangg1 {
+  padding: 2px;
 }
-.baidangg11{
-    position: relative;
-    aspect-ratio: 0.7/1;
+.baidangg11 {
+  position: relative;
+  aspect-ratio: 0.7/1;
 }
-.baidangg11:hover{
-    cursor: pointer;
+.baidangg11:hover {
+  cursor: pointer;
 }
-.reelview{
+.reelview {
   font-size: 24px;
   font-weight: 600;
-    position: absolute;
+  position: absolute;
   bottom: 0;
   left: 18px;
   margin: 0;
   padding: 8px;
   color: white;
 }
-.reelicon{
+.reelicon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 8px;
+  color: white;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.baidang11:hover .overlay {
+  opacity: 1;
+}
+.baidangg11:hover .overlay {
+  opacity: 1;
+}
+.caption {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.tym {
+  margin-top: 10px;
+}
+.like {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  margin-right: 30px;
+}
+.cmt {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+}
+.icontym {
+  margin-top: 10px;
+  margin-right: 3px;
+}
+.buto1.active {
+  color: black;
+  font-weight: bolder;
+}
+.modal-container {
+  backdrop-filter: blur(8px); /* Apply blur effect to the background */
+}
+
+.modal-overlay {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Add a semi-transparent black overlay */
+}
+.butohide {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .buto1 {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  .butohide {
+    display: inline;
+  }
+  .buto {
+    display: none;
+  }
+  .reelview {
+    font-size: 16px;
+    font-weight: 600;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 3px;
+    left: 20px;
     margin: 0;
     padding: 8px;
     color: white;
+  }
 }
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+@media screen and (max-width: 500px) {
+  .baidang {
+    max-width: 500px;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .baidang11:hover .overlay {
-    opacity: 1;
-  }
-  .baidangg11:hover .overlay {
-    opacity: 1;
   }
   .caption {
     display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
+    flex-direction: column;
   }
-  .tym{
-    margin-top: 10px;
-  }
-  .like{
+  .like {
     display: flex;
     flex-direction: row;
-    font-size: 16px;
-    margin-right: 30px;
+    margin-right: 10px;
   }
-  .cmt{
+  .cmt {
     display: flex;
     flex-direction: row;
-    font-size: 16px;
   }
-  .icontym{
+  .tym {
     margin-top: 10px;
+  }
+  .icontym {
+    font-size: 10px;
     margin-right: 3px;
   }
-  .buto1.active {
-    color: black;
-    font-weight: bolder;
+  .reelview {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    margin: 0;
+    padding: 8px;
+    color: white;
   }
-  .modal-container {
-    backdrop-filter: blur(8px); /* Apply blur effect to the background */
-  }
-  
-  .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent black overlay */
-  }
-  .butohide{
-    display: none;
-  }
-  @media screen and (max-width: 800px) {
-    .buto1{
-      margin-right: 20px;
-      font-size: 16px;
-    }
-    .butohide{
-      display: inline;
-    }
-    .buto{
-      display: none;
-    }
-    .reelview{
-      font-size: 16px;
-      font-weight: 600;
-        position: absolute;
-      bottom: 3px;
-      left: 20px;
-      margin: 0;
-      padding: 8px;
-      color: white;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    .baidang{
-      max-width: 500px;
-      width: 100%;
-    }
-    .caption{
-      display: flex;
-      flex-direction: column;
-    }
-    .like{
-      display: flex;
-      flex-direction: row;
-      margin-right: 10px;
-    }
-    .cmt{
-      display: flex;
-      flex-direction: row;
-    }
-    .tym{
-      margin-top: 10px;
-    }
-    .icontym{
-      font-size: 10px;
-      margin-right: 3px;
-    }
-    .reelview{
-      font-size: 14px;
-      font-weight: 600;
-        position: absolute;
-      margin: 0;
-      padding: 8px;
-      color: white;
-    }
-  }
+}

@@ -1,109 +1,106 @@
 .reelpage {
   overflow: hidden;
-overflow-x: hidden;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 0px;
-  }
+}
 ::-webkit-scrollbar-thumb {
   background-color: lightgray;
-  }
+}
 .videolist {
   display: flex;
-   flex-direction: column;
-   margin: 0 auto;
-   width: 450px;
-   padding: 20px;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 450px;
+  padding: 20px;
 }
 .video {
   width: 350px;
-  height: 90%; 
+  height: 90%;
   padding-bottom: 10%;
-  scroll-snap-align: start; 
+  scroll-snap-align: start;
   border-radius: 10px;
-    margin-bottom: 50px;
-    position: relative;
+  margin-bottom: 50px;
+  position: relative;
   display: inline-block;
 }
 
-.videoanh{
-    border-radius: 15px;
-    width: 100%;
-height: 100%;
-object-fit: cover;
+.videoanh {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-  .gocduoi {
-    position: absolute;
-    bottom: 60px;
-    left: 20px;
-    color: white;
-  }
-  .tenreel{
-    display: flex;
-    flex-direction: row;
+.gocduoi {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  color: white;
+}
+.tenreel {
+  display: flex;
+  flex-direction: row;
+}
+.tentaikhoan {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin-left: 10px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.tennick {
+  margin-right: 10px;
+}
+.followbutton {
+  font-size: 12px;
+  height: 25px;
+  background: none;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.contentreel {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.musicreel {
+  display: flex;
+  flex-direction: row;
+}
+.musicicon {
+  margin-top: 5px;
+  font-size: 13px;
+  margin-right: 7px;
+}
 
-  }
-  .tentaikhoan{
-    display: flex;
-    flex-direction: row;
-    color: white;
-    margin-left: 10px;
-    margin-top: 6px;
-    font-weight: 600;
-  }
-  .tennick{
-    margin-right: 10px;
-  }
-  .followbutton{
-    font-size: 12px;
-    height: 25px;
-    background: none;
-    border: 1px solid white;
-    border-radius: 8px;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-  }
-  .contentreel{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .musicreel{
-    display: flex;
-    flex-direction: row;
-
-  }
-  .musicicon{
-    margin-top: 5px;
-    font-size: 13px;
-    margin-right: 7px;
-  }
-
-  @media screen and (max-width: 500px) {
-    .reelpage {
-      overflow: hidden;
+@media screen and (max-width: 500px) {
+  .reelpage {
+    overflow: hidden;
     overflow-x: hidden;
-      display: grid;
-      grid-template-columns: 100%;
-    }
+    display: grid;
+    grid-template-columns: 100%;
   }
+}
 @media screen and (max-width: 1100px) {
   .reelpage {
     overflow: hidden;
-  overflow-x: hidden;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 100%;
   }
 }
 
-  .video-page {
-    width: 400px;
-    height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start; 
-    min-width: 400px;
-  }
-  
+.video-page {
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  min-width: 400px;
+}

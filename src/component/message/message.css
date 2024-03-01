@@ -1,266 +1,264 @@
-.dinbox{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto; 
+.dinbox {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
-.message_home{
-    padding: 10px 15px;
-    background-color: rgb(55, 151, 240);
-    border-radius: 20px;
-    margin-bottom: 10px;
-    max-width: 30vw;
-    height:fit-content;
-    width: fit-content;
-    display: inline-block;
-    margin-left: auto;
-    text-align: right;
-    color:white;
-    
+.message_home {
+  padding: 10px 15px;
+  background-color: rgb(55, 151, 240);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  max-width: 30vw;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  margin-left: auto;
+  text-align: right;
+  color: white;
 }
-.message_away{
-    margin-left: 0;
-    text-align: left;
-    max-width: 50%;
+.message_away {
+  margin-left: 0;
+  text-align: left;
+  max-width: 50%;
 }
-.span{
-    padding: 10px 15px;
-    background-color: lightgrey;
-    border-radius: 20px;
-    width: fit-content;
-    height:fit-content;
-    display: inline-block
-    
+.span {
+  padding: 10px 15px;
+  background-color: lightgrey;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
 }
-.tenchunickmess{
-    font-size:20px;
-    font-weight:700;
-    grid-area:auto;
-    line-height:25px;
-    cursor: pointer;
+.tenchunickmess {
+  font-size: 20px;
+  font-weight: 700;
+  grid-area: auto;
+  line-height: 25px;
+  cursor: pointer;
 }
-.daudanhsach{
-    padding: 30px 30px 5px 20px;
-    display: flex;
-    justify-content: space-between;
+.daudanhsach {
+  padding: 30px 30px 5px 20px;
+  display: flex;
+  justify-content: space-between;
 }
-.giuadanhsach{
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 22px;
-    display: flex;
-    justify-content: space-between;
-
+.giuadanhsach {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 22px;
+  display: flex;
+  justify-content: space-between;
 }
-.mesmid{
-    font-weight: 700;
-
+.mesmid {
+  font-weight: 700;
 }
-.reques{
-    font-weight: 500;
-    color: grey;
-    font-size: 15px;
+.reques {
+  font-weight: 500;
+  color: grey;
+  font-size: 15px;
 }
-.nick{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 10px;
+.nick {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 10px;
 }
-.nick:hover{
-    background-color: lightgray;
-    border-radius: 10px;
+.nick:hover {
+  background-color: lightgray;
+  border-radius: 10px;
 }
-.avanickchat{
-    width: 55px;
-    border-radius: 50%;
-    border: 1px solid lightgray;
-    margin-right: 15px;
+.avanickchat {
+  width: 55px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  margin-right: 15px;
 }
-.tennick1{
-    margin-top: 4px;
-    display: flex;
-    flex-direction: column;
+.tennick1 {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
 }
-.tennickchat{
-    font-size: 15px;
+.tennickchat {
+  font-size: 15px;
 }
-.online{
-    margin-top: 5px;
-    font-size: 12px;
-    color: gray;
+.online {
+  margin-top: 5px;
+  font-size: 12px;
+  color: gray;
 }
 
-.fullbenphai{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.fullbenphai {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.chatbar{
-    border-bottom: 1px solid lightgray;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.chatbar {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.iconme{
-    margin-top: 27px;
-    margin-right: 15px;
+.iconme {
+  margin-top: 27px;
+  margin-right: 15px;
 }
-.micon{
-    margin-right: 10px;
-    font-size: 30px;
-    cursor: pointer;
+.micon {
+  margin-right: 10px;
+  font-size: 30px;
+  cursor: pointer;
 }
-.sendbutton:hover{
-    color: grey;
+.sendbutton:hover {
+  color: grey;
 }
-    .message{
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-    }
-    .mNav{
-        height: 100vh;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 1;
-        transition: transform 0.3s ease;
-    }
-    .messbentraii{
-        width: 70px;
-        height: 100%;
-    } 
-    .messnav_buttons {
-        display: flex;
-        flex-direction: column;
-        margin-top:43px;
-        margin-left:10px
-      }   
-    .danhsachchat{
-        width: 100%;
-        border-right: 1px solid lightgray;
-        border-left: 1px solid lightgrey;
-        height: 100vh;
-    }
-    .messbentrai{
-        width: 100%;
-    }
-    .messbenphai{
-        max-width: 370px;
-        min-width: 370px;
-        width: 100%;
-        height: 800px;
-        display: flex;
-        flex-direction: row;
-    }
-    .inputmess{
-        border:1px solid lightgrey;
-        border-radius:100px;
-        padding:10px;
-        display:flex;
-        flex-direction: row;
-    }
-    .fullbenphai {
-        overflow: hidden;
-      }
-      
-      .dinbox {
-        overflow-y: auto;
-        max-height: 700px;
-      }
+.message {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.mNav {
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+.messbentraii {
+  width: 70px;
+  height: 100%;
+}
+.messnav_buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 43px;
+  margin-left: 10px;
+}
+.danhsachchat {
+  width: 100%;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgrey;
+  height: 100vh;
+}
+.messbentrai {
+  width: 100%;
+}
+.messbenphai {
+  max-width: 370px;
+  min-width: 370px;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+}
+.inputmess {
+  border: 1px solid lightgrey;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.fullbenphai {
+  overflow: hidden;
+}
+
+.dinbox {
+  overflow-y: auto;
+  max-height: 640px;
+}
 @media screen and (max-width: 1000px) {
-    .anten{
-        display: none;
-    }
-    .messbenphai{
-        max-width: 110px;
-        min-width: 110px;
-        height: 800px;
-        border-left: 1px solid lightgrey;
-        display: flex;
-        flex-direction: row;
-    }
-    .noteicon{
-        margin: 0 auto;
-        margin-bottom: 15px;
-    }
+  .anten {
+    display: none;
+  }
+  .messbenphai {
+    max-width: 110px;
+    min-width: 110px;
+    height: 800px;
+    border-left: 1px solid lightgrey;
+    display: flex;
+    flex-direction: row;
+  }
+  .noteicon {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
 }
 @media screen and (max-width: 750px) {
-    .mNav {
-        display: flex;
-        flex-direction: row;
-        border-top: 1px solid grey;
-        background-color: white;
-        width: 100%;
-        height: 100vh;
-      }
-      .messbentrai{
-        padding-bottom: 50px;
-      }
-    .messnavv{
-        
-        width: 100%;
-        position: fixed;
-        bottom: 60px;
-        left: 0;
-        right: 0;
-        background-color: white;
-        z-index: 999;
-      }
-      .messbenphai{
-        margin-left: 0;
-    }
-    .messbentraii{
-        width: 100%;
-        height: 70px;
-    } 
-    .messnav_buttons{
-        margin-top: 0;
-        margin-left: 0;
-        display: grid;
-        margin-left: 20px;
-        grid-template-columns: 16% 16% 16% 16% 16% 16%;
-    }
-    .inputmess {
-        display: flex;
-        align-items: center;
-      }
-      
-      .iconmess {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-    
-}
-@media (max-width: 550px) {
-    .tennick1{
-        display: none;
-    }
+  .mNav {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid grey;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
   }
-
+  .messbentrai {
+    padding-bottom: 50px;
+  }
+  .messnavv {
+    width: 100%;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+  }
+  .messbenphai {
+    margin-left: 0;
+  }
+  .messbentraii {
+    width: 100%;
+    height: 70px;
+  }
+  .messnav_buttons {
+    margin-top: 0;
+    margin-left: 0;
+    display: grid;
+    margin-left: 20px;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  }
   .inputmess {
     display: flex;
     align-items: center;
   }
-  
-  .input-wrapper {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-  }
-  
-  .input-wrapper > input {
-    flex-grow: 1;
-    font-size: 14px;
-  }
-  
+
   .iconmess {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    flex-shrink: 0;
   }
+}
+@media (max-width: 550px) {
+  .tennick1 {
+    display: none;
+  }
+  .dinbox {
+    overflow-y: auto;
+    max-height: 700px;
+  }
+}
+
+.inputmess {
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.input-wrapper > input {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.iconmess {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}

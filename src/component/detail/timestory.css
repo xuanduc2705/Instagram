@@ -1,62 +1,61 @@
-.timestory{
-    display: grid;
-    grid-template-columns:  14% 14% 14% 14% 14% 14% 14%;
+.timestory {
+  display: grid;
+  grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
 }
-.coverimage1{
-    width: 80px;
-    height: 80px;
+.coverimage1 {
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.covercover {
+  margin: 0 auto;
+  width: 84px;
+  height: 84px;
+  border: 1.5px solid lightgrey;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+.coverimage1:hover {
+  cursor: pointer;
+}
+.storyname {
+  font-size: 14px;
+  font-weight: 500;
+}
+.yes {
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .timestory {
+    display: flex;
+    flex-direction: row;
+  }
+  .coverimage1 {
+    width: 60px;
+    height: 60px;
     border: 2px solid white;
     overflow: hidden;
     border-radius: 50%;
-}
-.covercover{
+  }
+  .covercover {
     margin: 0 auto;
-    width: 84px;
-    height: 84px;
+    width: 64px;
+    height: 64px;
     border: 1.5px solid lightgrey;
     overflow: hidden;
     border-radius: 50%;
     margin-bottom: 5px;
-}
-.coverimage1:hover{
-    cursor: pointer;
-}
-.storyname{
-    
-    font-size: 14px;
-    font-weight: 500;
-}
-.yes{
-    text-align: center;
-}
-@media screen and (max-width: 800px) {
-    .timestory{
-        display: flex;
-        flex-direction: row;
-    }
-    .coverimage1{
-        width: 60px;
-        height: 60px;
-        border: 2px solid white;
-        overflow: hidden;
-        border-radius: 50%;
-    }
-    .covercover{
-        margin: 0 auto;
-        width: 64px;
-        height: 64px;
-        border: 1.5px solid lightgrey;
-        overflow: hidden;
-        border-radius: 50%;
-        margin-bottom: 5px;
-    }
+  }
 }
 @media screen and (max-width: 500px) {
-    .storyname{
-        font-size: 11px;
-    font-weight: 500; 
-    }
-    .yes{
-        margin-right: 10px;
-    }
+  .storyname {
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .yes {
+    margin-right: 10px;
+  }
 }

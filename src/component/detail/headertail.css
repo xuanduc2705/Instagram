@@ -1,114 +1,110 @@
-.headertailpage{
-    padding-top: 10px;
-    display: grid;
-    grid-template-columns: 35% 65%;
-    width: 85%;
-    margin: 0 auto;
-
+.headertailpage {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  width: 85%;
+  margin: 0 auto;
 }
-.anh{
-    margin:0 auto;
-    margin-top: 15%;
-    width: 170px;
+.anh {
+  margin: 0 auto;
+  margin-top: 15%;
+  width: 170px;
   height: 170px;
   border-radius: 50%;
   overflow: hidden;
 }
-.hinfo{
-    padding-top: 40px;
+.hinfo {
+  padding-top: 40px;
 }
-.infoname{
-    font-weight: 400;
-    font-size: 20px;
-    
+.infoname {
+  font-weight: 400;
+  font-size: 20px;
 }
-.done{
-    color:royalblue;
-    margin-left: 5px;
-    font-size: 8px;
-    
+.done {
+  color: royalblue;
+  margin-left: 5px;
+  font-size: 8px;
 }
-.but{
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-top: 10px;
-    padding-bottom: 7px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 5px;
-    border: none;
-    margin-right: 15px;
+.but {
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  margin-right: 15px;
 }
-.but2{
-    font-size: 20px;
+.but2 {
+  font-size: 20px;
 }
-.but:hover{
-    background-color: darkgrey;
-    cursor: pointer;
+.but:hover {
+  background-color: darkgrey;
+  cursor: pointer;
 }
-.but2:hover{
-    cursor: pointer;
+.but2:hover {
+  cursor: pointer;
 }
-.info2{
-    margin-top: 20px;
-    margin-bottom: 10px;
+.info2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
-.info21{
-    font-weight: 600;
-    font-size: 17px;
-    margin-right: 3px;
+.info21 {
+  font-weight: 600;
+  font-size: 17px;
+  margin-right: 3px;
 }
-.info22{
-    margin-right: 38px;
+.info22 {
+  margin-right: 38px;
 }
-.info31{
-    font-weight: bold;
+.info31 {
+  font-weight: bold;
 }
 @media screen and (max-width: 800px) {
-    .infoname{
-        font-weight: 500;
-        font-size: 16px;     
-    } 
-    .headertailpage{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .htrai{
-        display: flex;
-        flex-direction: row;
-    }
-    .info1{
-        display: none;
-    }
-    .info2{
-        display: none;
-    }
-    .iinfo1{
-        display: flex;
-        flex-direction: column;
-        padding: 30px 0 0 10px;
-    }
-    .himage{
-        padding: 20px;
-    }
-    .anh{
-        margin:0 auto;
-        margin-top: 15%;
-        width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    .hinfo{
-        padding: 10px 0 10px 15px;
-    }
-    .info31{
-        font-size: 13px;
-    }
-    .info3{
-        font-size: 13px;
-    }
-    
+  .infoname {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .headertailpage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .htrai {
+    display: flex;
+    flex-direction: row;
+  }
+  .info1 {
+    display: none;
+  }
+  .info2 {
+    display: none;
+  }
+  .iinfo1 {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0 10px;
+  }
+  .himage {
+    padding: 20px;
+  }
+  .anh {
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .hinfo {
+    padding: 10px 0 10px 15px;
+  }
+  .info31 {
+    font-size: 13px;
+  }
+  .info3 {
+    font-size: 13px;
+  }
 }
