@@ -1,14 +1,10 @@
 import React from "react";
 import "../explore/explore.css";
-import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
-import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import "../reels/reels.css";
-import { Link } from "react-router-dom";
 import { reel } from "../../data/reelsdata";
 import { FaMusic } from "react-icons/fa";
 import { Avatar } from "@mui/material";
-import { Element, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import { LuArrowUpToLine } from "react-icons/lu";
 import { LuArrowDownToLine } from "react-icons/lu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -16,26 +12,10 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { MdOutlineMoreHoriz } from "react-icons/md";
-import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
-import ExploreIcon from "@mui/icons-material/Explore";
-import SlideshowIcon from "@mui/icons-material/Slideshow";
-import ChatIcon from "@mui/icons-material/Chat";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "../home/Home.css";
 
 function Reels() {
-  const inputRef = useRef(null);
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const [showAnotherNav, setShowAnotherNav] = useState(false);
-  const [showAnotherNavi, setShowAnotherNavi] = useState(false);
-  const handleClose = () => {
-    setIsNavVisible(true);
-    setShowAnotherNav(false);
-    setShowAnotherNavi(false);
-  };
   const scrollToNextVideo = (index) => {
     const nextIndex = index + 1;
     scroller.scrollTo(String(nextIndex), {
@@ -75,7 +55,7 @@ function Reels() {
 
   return (
     <div className="reelpage">
-      <div className="reelslist" onClick={handleClose}>
+      <div className="reelslist">
         <div className="videolist">
           {reel.map((post, index) => (
             <div className="video-page" key={index} id={index}>
