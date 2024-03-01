@@ -3,11 +3,14 @@ import { IoPersonAddOutline } from "react-icons/io5";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import ModalLogin from "../../layout/nav/modalLogin";
+import { useLocation } from "react-router-dom";
 
 const Move = (props) => {
+  const location = useLocation();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const name = location.pathname.substring(8, location.pathname.length);
   return (
     <>
       <div
@@ -27,7 +30,9 @@ const Move = (props) => {
             justifyContent: "center",
           }}
         >
-          <IoIosSettings style={{ fontSize: "30px" }} />
+          {name === "s.pinkduck_03" && (
+            <IoIosSettings style={{ fontSize: "30px" }} />
+          )}
         </div>
         <div
           className="col-8"
@@ -37,12 +42,11 @@ const Move = (props) => {
             justifyContent: "center",
           }}
         >
-          <span
-            style={{ fontWeight: "600", cursor: "pointer" }}
-            onClick={handleShow}
-          >
+          <span style={{ fontWeight: "600", cursor: "pointer" }}>
             {props.name}
-            <IoIosArrowDown />
+            {name === "s.pinkduck_03" && (
+              <IoIosArrowDown onClick={handleShow} />
+            )}
           </span>
         </div>
         <div
@@ -53,7 +57,9 @@ const Move = (props) => {
             justifyContent: "center",
           }}
         >
-          <IoPersonAddOutline style={{ fontSize: "28px" }} />
+          {name === "s.pinkduck_03" && (
+            <IoPersonAddOutline style={{ fontSize: "28px" }} />
+          )}
         </div>
       </div>
       <ModalLogin show={show} onClick={handleClose} />
