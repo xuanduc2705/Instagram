@@ -8,7 +8,6 @@ import Login from "./component/login/login.js";
 import Explore from "./component/explore/explore.js";
 import Reels from "./component/reels/reels.js";
 import Message from "./component/message/message.js";
-import { getTokenFromSessionStorage } from "./component/Util/storageUtil.js";
 import { useState, useEffect } from "react";
 import { publicRoutes, privateRoutes } from "./route/index.js";
 import Layout from "./layout/index.js";
@@ -20,6 +19,7 @@ function App() {
       setChange(true);
     }
   }, []);
+  console.log("aaa" + localStorage.getItem("name"));
   return (
     <div className="App">
       <React.StrictMode>

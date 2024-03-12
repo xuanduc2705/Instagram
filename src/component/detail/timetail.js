@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "../detail/timetail.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,10 +10,9 @@ import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import { posts } from "../../data/detaildata";
-import Modal from "react-bootstrap/Modal";
-import { Avatar } from "@mui/material";
-import DoneIcon from "@mui/icons-material/Done";
 import ModalPost from "./modalPost";
+import { getListUser, DeleteUser } from "../../lib/axios";
+import { Button } from "react-bootstrap";
 
 function Timetail() {
   const [show, setShow] = useState(false);
@@ -29,6 +28,24 @@ function Timetail() {
   const [activeSection, setActiveSection] = useState("baidang");
   const handleButtonClick = (section) => {
     setActiveSection(section);
+  };
+  const [userdata, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getListUser();
+      if (response?.data) setData(response.data);
+    };
+    fetchData();
+  }, []);
+  const handleDeleteUser = async (userId) => {
+    try {
+      await DeleteUser(userId);
+      // Remove the deleted user from the userdata state
+      setData((prevData) => prevData.filter((user) => user.id !== userId));
+      console.log("User deleted successfully");
+    } catch (error) {
+      console.error("Failed to delete user:", error);
+    }
   };
   return (
     <div className="timetailpage">
@@ -128,13 +145,16 @@ function Timetail() {
       )}
       {activeSection === "baidanggg" && (
         <div className="baidanggg">
-          {tenn.tagged.map((post, index) => (
-            <div className="baidang1">
-              <div className="baidang11">
-                <img key={index} src={post} className="heto" alt="" />
-              </div>
-            </div>
-          ))}
+          {userdata &&
+            userdata[0] &&
+            userdata.map((user, index) => (
+              <>
+                <Button onClick={() => handleDeleteUser(user.id)}>
+                  Delete
+                </Button>
+                <h1>{user.name}</h1>
+              </>
+            ))}
         </div>
       )}
     </div>

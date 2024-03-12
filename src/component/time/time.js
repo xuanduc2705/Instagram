@@ -25,7 +25,10 @@ function TimeLine() {
   const handleAddComment = (newComment) => {
     setComments([...comments, newComment]);
   };
-  const name = "s.pinkduck_03";
+  const name = localStorage.getItem("nickname");
+  const ten2 = localStorage.getItem("name");
+  const ava = localStorage.getItem("avatar");
+  console.log(ten2);
   const [stos, setStos] = useState([
     {
       stoava:
@@ -102,18 +105,14 @@ function TimeLine() {
               <div className="file">
                 <span className="avat">
                   <Avatar>
-                    <img
-                      src="https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg"
-                      className="hero"
-                      alt=""
-                    />
+                    <img src={ava} className="hero" alt="" />
                   </Avatar>
                 </span>
                 <div className="profileinfo">
                   <Link to={`/detail/${name}`} className="usernamee">
                     {name}
                   </Link>
-                  <span className="relationn">🅳🆄🅺🅴</span>
+                  <span className="relationn">{ten2}</span>
                 </div>
               </div>
               <button className="Follow_button" onClick={handleShow}>

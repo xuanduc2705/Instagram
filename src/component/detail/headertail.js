@@ -9,7 +9,7 @@ import { posts } from "../../data/detaildata";
 function Headertail() {
   const { name } = useParams();
   const tenn = posts.find((post) => post.sname === name);
-  const text = tenn.ten2;
+  console.log(">>SNAME" + tenn.sname);
   return (
     <div className="headertailpage">
       <div className="htrai">

@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import Detail from "../component/detail/detail";
 import Explore from "../component/explore/explore";
 import Home from "../component/home/home";
 import Login from "../component/login/login";
 import Message from "../component/message/message";
 import Reels from "../component/reels/reels";
-
+import Socket from "../component/message/socket";
 const privateRoutes = [
   { path: "/", component: Home },
   { path: "/home", component: Home },
@@ -13,6 +14,7 @@ const privateRoutes = [
   { path: "/explore", component: Explore },
   { path: "/message", component: Message },
   { path: "/detail/:name", component: Detail },
+  { path: "/socket", component: Socket },
 ];
 const publicRoutes = [
   { path: "/", component: Login },
@@ -23,5 +25,6 @@ const publicRoutes = [
   { path: "/message", component: Login },
   { path: "/detail/:name", component: Login },
   { path: "/login", component: Login },
+  { path: "/socket", component: Login },
 ];
 export { privateRoutes, publicRoutes };

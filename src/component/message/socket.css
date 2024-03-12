@@ -1,0 +1,55 @@
+.chat-item {
+  width: auto;
+  max-width: 50%;
+  height: fit-content;
+  width: fit-content;
+}
+.your-message {
+  background: #009bff;
+  margin: 1rem;
+  border-radius: 1em;
+  padding: 1em;
+  color: white;
+  float: right;
+}
+
+.other-people {
+  background: white;
+  margin-left: 15px;
+  border-radius: 1em;
+  padding: 1em;
+  color: black;
+  text-align: left;
+  float: left;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-chat_message {
+  min-height: 60vh;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.box-chat {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 100px;
+  box-shadow: 0 0 10px 0 black;
+  border-radius: 1em;
+}
+
+.send-box {
+  width: 100%;
+  padding: 1em;
+}
+
+textarea {
+  width: 80%;
+  margin: 0;
+  padding: 0.5em;
+  background: #ebf5ff;
+  border-radius: 2em;
+  display: flex;
+  float: left;
+}

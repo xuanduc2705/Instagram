@@ -35,7 +35,11 @@ const Nav = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("nickname");
+    sessionStorage.removeItem("avatar");
     window.location.reload();
     navigate("/login");
   };

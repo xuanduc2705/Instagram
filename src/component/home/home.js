@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -12,10 +12,8 @@ import SlideshowTwoToneIcon from "@mui/icons-material/SlideshowTwoTone";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TimeLine from "../time/time";
 import "../home/Home.css";
-import { getTokenFromSessionStorage } from "../Util/storageUtil";
 
 function Home() {
-  console.log(getTokenFromSessionStorage());
   return (
     <div className="homepage">
       <div className="homepage_time">

@@ -11,6 +11,7 @@ const Move = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const name = location.pathname.substring(8, location.pathname.length);
+  const owner = localStorage.getItem("nickname");
   return (
     <>
       <div
@@ -30,9 +31,7 @@ const Move = (props) => {
             justifyContent: "center",
           }}
         >
-          {name === "s.pinkduck_03" && (
-            <IoIosSettings style={{ fontSize: "30px" }} />
-          )}
+          {name === owner && <IoIosSettings style={{ fontSize: "30px" }} />}
         </div>
         <div
           className="col-8"
@@ -44,9 +43,7 @@ const Move = (props) => {
         >
           <span style={{ fontWeight: "600", cursor: "pointer" }}>
             {props.name}
-            {name === "s.pinkduck_03" && (
-              <IoIosArrowDown onClick={handleShow} />
-            )}
+            {name === owner && <IoIosArrowDown onClick={handleShow} />}
           </span>
         </div>
         <div

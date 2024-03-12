@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { loginApi } from "../../services/services";
 import { toast } from "react-toastify";
 import "../login/login.css";
 import { FaFacebookSquare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { saveTokenToSessionStorage } from "../Util/storageUtil";
 import { red } from "@mui/material/colors";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { LoginApi } from "../../lib/axios";
 
 function redirectG() {
   window.location.href =
@@ -28,18 +27,22 @@ function Login() {
   const [showError, setShowError] = useState(true);
   const handleLogin = async () => {
     try {
-      let res = await loginApi(email, password);
+      let res = await LoginApi(email, password);
 
-      console.log(">>check res:", res);
-      console.log(res.data.error);
+      console.log(">>check res:", res.accesstoken);
 
-      if (res.data.status == 400) {
-        navigate("/login");
-      } else {
+      if (res.accesstoken) {
         setShowError(true);
-        saveTokenToSessionStorage(res.data.token);
+        localStorage.setItem("token", res.accesstoken);
+        localStorage.setItem("name", res.user.name);
+        localStorage.setItem("nickname", res.user.nickname);
+        localStorage.setItem("avatar", res.user.avatar);
+
         navigate("/home");
         window.location.reload();
+      } else {
+        setShowError(true);
+        navigate("/login");
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -71,15 +74,6 @@ function Login() {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
-              {showError ? (
-                <div></div>
-              ) : (
-                <p
-                  style={{ color: "red", fontSize: "10px", marginLeft: "50px" }}
-                >
-                  Wrong username!
-                </p>
-              )}
               <input
                 type="password"
                 className="usernam"
@@ -87,6 +81,15 @@ function Login() {
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
+              {showError ? (
+                <div></div>
+              ) : (
+                <p
+                  style={{ color: "red", fontSize: "10px", marginLeft: "50px" }}
+                >
+                  Wrong username or password!
+                </p>
+              )}
               <button className="loginbutton" onClick={() => handleLogin()}>
                 Log in
               </button>

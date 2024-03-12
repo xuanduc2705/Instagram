@@ -66,11 +66,11 @@
   padding: 10px;
 }
 .nick:hover {
-  background-color: lightgray;
   border-radius: 10px;
 }
 .avanickchat {
   width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: 1px solid lightgray;
   margin-right: 15px;

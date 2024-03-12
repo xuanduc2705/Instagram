@@ -1,28 +1,34 @@
 import React from "react";
-import "../nav/nav.css";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { Avatar } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Link, useNavigate } from "react-router-dom";
 
-const ModalLogin = (props) => {
+const ModalGroup = (props) => {
   const navigate = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.reload();
-    navigate("/login");
-  };
-  const nickname = localStorage.getItem("nickname");
+
+  const nickname = sessionStorage.getItem("nickname");
   return (
     <Modal show={props.show} onHide={props.onClick} centered>
       <Modal.Header closeButton>
         <Modal.Title
-          style={{ fontSize: "14px", textAlign: "center", marginLeft: "36%" }}
+          style={{ fontSize: "20px", textAlign: "center", marginLeft: "23%" }}
         >
-          Switch accounts
+          Add to new Group Chatbox?
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body style={{ height: "160px" }}>
+      <Modal.Body style={{ height: "600px" }}>
+        {/* <div style={{ display: "flex" }}>
+          <input
+            className="searchinput"
+            placeholder="Create groupname"
+            style={{
+              width: "70%",
+              margin: "0 auto",
+            }}
+          />
+        </div> */}
+
         <span className="avatt">
           <div
             className="thongtin"
@@ -33,11 +39,7 @@ const ModalLogin = (props) => {
             }}
           >
             <Avatar className="hero">
-              <img
-                src="https://i.ibb.co/s3TX9zq/412089599-590870466519171-2689894443863566184-n-1.jpg"
-                style={{ width: "100%" }}
-                alt=""
-              />
+              <img src={{}} style={{ width: "100%" }} alt="" />
             </Avatar>
             <div
               className="profileinfoo"
@@ -58,7 +60,7 @@ const ModalLogin = (props) => {
                   marginRight: "6px",
                 }}
               >
-                {nickname}
+                ???
               </Link>
               <CheckCircleIcon className="checkicon" />
             </div>
@@ -66,20 +68,12 @@ const ModalLogin = (props) => {
         </span>
       </Modal.Body>
       <Modal.Footer>
-        <Link
-          to={`/login`}
-          style={{
-            textDecoration: "none",
-            marginRight: "6px",
-            margin: "0 auto",
-          }}
-          className="usernameeee"
-          onClick={handleLogout}
-        >
-          <span className="logout">Log in to an existed account</span>
+        <Link>
+          <Button onClick={props.onClick2}>Add</Button>
         </Link>
+        <Button onClick={props.onClick}>Exit</Button>
       </Modal.Footer>
     </Modal>
   );
 };
-export default ModalLogin;
+export default ModalGroup;
