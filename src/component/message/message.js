@@ -7,9 +7,11 @@ import "./socket.css";
 import { MdOutlineGroupAdd } from "react-icons/md";
 import {
   createBoxchat,
+  evictMessage,
   getListAccount,
   getListBoxchat,
   getListBoxchatMess,
+  getListMessage,
 } from "../../lib/axios";
 import ModalAdd from "./modaladd";
 import { ListNick } from "./listnick";
@@ -40,7 +42,6 @@ function Message() {
       setMess(ress);
     }
   }, [messchose, choosing]);
-  console.log(choosing);
   const [account, setAccount] = useState([]);
   const [accountt, setAccountt] = useState([]);
   const [messacount, setMessAccount] = useState([]);
@@ -85,7 +86,6 @@ function Message() {
     };
     fetchData();
   }, []);
-  console.log(messacount);
   const [hello, setHello] = useState([]);
   const handleChoose = async (item, ava, fa) => {
     let res = await getListBoxchatMess(item);
@@ -109,15 +109,18 @@ function Message() {
     };
   }, []);
   const [selectuser, setSelectuser] = useState("");
-  const sendMessage = () => {
-    if (message !== null) {
+  const sendMessage = async () => {
+    if (message !== null && message.trim() !== "") {
+      let render = await getListMessage();
+      let lastObject = render[render.length - 1];
+      let mid = lastObject.id + 1;
       const msg = {
         isGroupchat: select,
         boxchatid: choosing,
         content: message,
         id: id,
+        messageid: mid,
         avatar: avatar,
-        time: new Date(),
       };
       socketRef.current.emit("sendDataClient", msg);
       setMessage("");
@@ -202,6 +205,10 @@ function Message() {
     console.log("Updated listadd:", listadd);
     console.log("Updated listadd:", listaddmem);
   }, [listadd, listaddmem]);
+  const [idchosen, setIdChosen] = useState();
+  const handleEvict = async () => {
+    await evictMessage(idchosen);
+  };
   const [querygroup, setQuerygroup] = useState("");
   const isResult = query !== "" && inputRef.current?.value !== "";
   return (
@@ -252,6 +259,10 @@ function Message() {
         handleChange={handleChange}
         IsSend={IsSend}
         message={message}
+        setIdChosen={setIdChosen}
+        handleEvict={handleEvict}
+        setCheck={setCheck}
+        setHello={setHello}
       />
       <ModalAdd
         name={useradd}

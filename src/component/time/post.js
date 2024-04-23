@@ -14,32 +14,35 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import { getTokenFromSessionStorage } from "../Util/storageUtil";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
+import { addComment } from "../../lib/axios";
 
-function Post({
-  ava,
-  image,
-  sname,
-  like,
-  time,
-  content,
-  postt,
-  following,
-  followers,
-  pos1,
-  pos2,
-  pos3,
-  cmt,
-  onAddComment,
-}) {
+function Post(props) {
+  const {
+    ava,
+    image,
+    sname,
+    like,
+    time,
+    content,
+    postt,
+    following,
+    followers,
+    pos1,
+    pos2,
+    pos3,
+    cmt,
+    onAddComment,
+    comment,
+    handleClickImg,
+    data,
+    fetchListPost,
+  } = props;
   const navigate = useNavigate();
   const name = sname;
   const [isFavoriteClicked, setIsFavoriteClicked] = useState(false);
   const [likeCount, setLikeCount] = useState(like);
   const [inputFocused, setInputFocused] = useState(false);
-
+  const account = localStorage.getItem("id");
   const handleInputFocus = () => {
     setInputFocused(true);
   };
@@ -80,22 +83,14 @@ function Post({
     setCommentText(inputValue);
     setShowPost(inputValue.length > 0);
   };
-
+  const addCom = async (a, b, c) => {
+    await addComment(a, b, c);
+  };
   const handleCommentSubmit = () => {
-    const token = getTokenFromSessionStorage();
-    if (token) {
-      if (commentText !== "") {
-        const newComment = {
-          author: "s.pinkduck_03",
-          text: commentText,
-        };
-
-        onAddComment(newComment);
-
-        setCommentText("");
-      }
-    } else {
-      navigate("/login");
+    if (commentText !== null && commentText.trim() !== "") {
+      fetchListPost();
+      addCom(account, commentText, data.id);
+      setCommentText("");
     }
   };
   return (
@@ -166,7 +161,7 @@ function Post({
         <MoreHorizIcon className="pointer" />
       </div>
       <div className="post_image">
-        <img src={image} alt="" />
+        <img src={image} alt="" onClick={() => handleClickImg()} />
       </div>
       <div className="post_footer">
         <div className="post_footerIcons">
@@ -254,19 +249,36 @@ function Post({
               </div>
             )}
           </Link>
-          <span>{content}</span>
+          <span style={{ wordBreak: "break-word", width: "100%" }}>
+            {content}
+          </span>
         </div>
       </div>
       <div className="comment">
-        <span className="viewall">View all 136 comments</span>
-        {cmt &&
-          Array.isArray(cmt) &&
-          cmt.map((comment, index) => (
-            <div key={index} className="commentt">
-              <span className="comment-author">{comment.author}</span>
-              <span className="comment-text">{comment.text}</span>
-            </div>
-          ))}
+        {comment.length > 0 ? (
+          <span className="viewall" onClick={() => handleClickImg()}>
+            View all {comment.length} comments
+          </span>
+        ) : (
+          <span className="viewall">No comment yet</span>
+        )}
+        {comment &&
+          comment
+            ?.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
+            .slice(-3)
+            .map((comment, index) => (
+              <div key={index} className="commentt">
+                <span className="comment-author">
+                  {comment?.User?.nickname}
+                </span>
+                <span
+                  className="comment-text"
+                  style={{ wordBreak: "break-all" }}
+                >
+                  {comment.content}
+                </span>
+              </div>
+            ))}
       </div>
       <div className="comment-input">
         <input

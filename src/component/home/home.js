@@ -12,12 +12,20 @@ import SlideshowTwoToneIcon from "@mui/icons-material/SlideshowTwoTone";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TimeLine from "../time/time";
 import "../home/Home.css";
+import { PostModal } from "../time/postmodal";
 
 function Home() {
+  const [showcreate, setShowCreate] = useState(false);
+  const [load, setLoad] = useState();
   return (
     <div className="homepage">
       <div className="homepage_time">
-        <TimeLine />
+        <TimeLine setShowCreate={setShowCreate} load={load} setLoad={setLoad} />
+        <PostModal
+          show={showcreate}
+          setShowCreate={setShowCreate}
+          setLoad={setLoad}
+        />
       </div>
     </div>
   );

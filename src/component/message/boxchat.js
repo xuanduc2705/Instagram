@@ -1,9 +1,13 @@
-import { Avatar } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 import { BsEmojiSmile } from "react-icons/bs";
 import { FiVideo } from "react-icons/fi";
 import { IoCallOutline, IoImageOutline } from "react-icons/io5";
 import { MdOutlineInfo, MdOutlineKeyboardVoice } from "react-icons/md";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import "primeicons/primeicons.css";
+import { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
+import { evictMessage, getListBoxchatMess } from "../../lib/axios";
 
 export const Boxchat = ({
   choosing,
@@ -17,7 +21,32 @@ export const Boxchat = ({
   handleChange,
   IsSend,
   message,
+  handleEvict,
+  setIdChosen,
+  setCheck,
+  setHello,
 }) => {
+  console.log(hello);
+  const [visible, setVisible] = useState(false);
+  const [idsocket, setIdsocket] = useState();
+  let items = [
+    { label: "Delete", icon: "pi pi-plus" },
+    { label: "Evict", icon: "pi pi-search" },
+  ];
+  const handleChosenId = async (idchose) => {
+    setVisible(true);
+    setIdChosen(idchose);
+  };
+  const handleEvictAndRefresh = async () => {
+    await handleEvict();
+    checkRefresh();
+    setHello([]);
+  };
+  const checkRefresh = async () => {
+    let render = await getListBoxchatMess(choosing);
+    setCheck(render);
+    setVisible(false);
+  };
   return (
     <>
       <div className="messbentrai">
@@ -61,15 +90,40 @@ export const Boxchat = ({
                   </div>
                   <div className="dinbox" style={{}}>
                     {check
-                      ?.sort((a, b) => (a.time > b.time ? 1 : -1))
+                      ?.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
                       .map((ms, indexx) => (
                         <>
-                          {ms.id === id ? (
+                          {ms.name === id ? (
                             <>
-                              <div>
-                                <span className={`${"your-message"} chat-item`}>
-                                  {ms.content}
-                                </span>
+                              <div className="flex flex-row hove">
+                                {ms.content === "Tin nhắn đã bị thu hồi" ? (
+                                  <span
+                                    className={`${"your-message2"} chat-item`}
+                                  >
+                                    {ms.content}
+                                  </span>
+                                ) : (
+                                  <span
+                                    className={`${"your-message"} chat-item`}
+                                  >
+                                    {ms.content}
+                                  </span>
+                                )}
+                                <>
+                                  {ms.content !== "Tin nhắn đã bị thu hồi" && (
+                                    <span className="message_options">
+                                      <i className="pi pi-times-circle"></i>
+                                      <i
+                                        className=" pi pi-trash "
+                                        style={{
+                                          color: "red",
+                                          marginLeft: "1.5vh",
+                                        }}
+                                        onClick={() => handleChosenId(ms.id)}
+                                      ></i>
+                                    </span>
+                                  )}
+                                </>
                               </div>
                             </>
                           ) : (
@@ -94,7 +148,7 @@ export const Boxchat = ({
                                       color: "grey",
                                     }}
                                   >
-                                    {ms.id}
+                                    {ms.name}
                                   </span>
                                   {ms.content}
                                 </span>
@@ -110,11 +164,24 @@ export const Boxchat = ({
                           <>
                             {ms.id === id ? (
                               <>
-                                <div>
+                                <div className="flex flex-row hove">
                                   <span
                                     className={`${"your-message"} chat-item`}
                                   >
                                     {ms.content}
+                                  </span>
+                                  <span className="message_options">
+                                    <i className="pi pi-times-circle"></i>
+                                    <i
+                                      className=" pi pi-trash "
+                                      style={{
+                                        color: "red",
+                                        marginLeft: "1.5vh",
+                                      }}
+                                      onClick={() =>
+                                        handleChosenId(ms.messageid)
+                                      }
+                                    ></i>
                                   </span>
                                 </div>
                               </>
@@ -221,6 +288,38 @@ export const Boxchat = ({
           </div>
         )}
       </div>
+      <Modal show={visible} onHide={() => setVisible(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title
+            style={{ fontSize: "20px", textAlign: "center", marginLeft: "30%" }}
+          >
+            Do you want to evict it?
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "4vh 0 4vh 0",
+          }}
+        >
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ marginRight: "2vh" }}
+            onClick={() => handleEvictAndRefresh()}
+          >
+            Accept
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            onClick={() => setVisible(false)}
+          >
+            Cancel
+          </Button>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

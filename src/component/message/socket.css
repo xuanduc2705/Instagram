@@ -4,6 +4,18 @@
   height: fit-content;
   width: fit-content;
 }
+.message_options {
+  float: right;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  display: none;
+}
+
+.flex.hove:hover .message_options {
+  display: inline-block;
+}
+
 .your-message {
   background: #009bff;
   margin: 1rem;
@@ -12,7 +24,15 @@
   color: white;
   float: right;
 }
-
+.your-message2 {
+  background: grey;
+  margin: 1rem;
+  border-radius: 1em;
+  padding: 1em;
+  color: white;
+  float: right;
+  font-style: italic;
+}
 .other-people {
   background: white;
   margin-left: 15px;

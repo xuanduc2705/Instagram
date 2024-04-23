@@ -342,6 +342,19 @@
   border: none;
   outline: none;
 }
+.inputcmt2 {
+  border: none;
+  outline: none;
+  width: 250px;
+  font-size: 13px;
+  margin: 3px;
+  border-bottom: 1px solid black;
+}
+
+.inputcmt2:focus,
+.inputcmt2:focus-within {
+  outline: none;
+}
 .comment-author {
   font-weight: 600;
   margin-right: 10px;

@@ -113,10 +113,7 @@ const Nav = (props) => {
             <FavoriteBorderIcon />
             <span className="spann">Notifications</span>
           </button>
-          <button className="sidenav_button">
-            <AddCircleOutlineIcon />
-            <span className="spann">Create</span>
-          </button>
+
           <Link to={"/detail/s.pinkduck_03"}>
             <div className="profileava">
               <Avatar

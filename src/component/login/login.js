@@ -34,6 +34,7 @@ function Login() {
       if (res.accesstoken) {
         setShowError(true);
         localStorage.setItem("token", res.accesstoken);
+        localStorage.setItem("id", res.user.id);
         localStorage.setItem("name", res.user.name);
         localStorage.setItem("nickname", res.user.nickname);
         localStorage.setItem("avatar", res.user.avatar);

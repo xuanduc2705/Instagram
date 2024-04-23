@@ -106,9 +106,7 @@ const Messnav = (props) => {
             >
               <FavoriteBorderIcon className="buts" />
             </button>
-            <button className="sidenav_button2">
-              <AddCircleOutlineIcon className="buts" />
-            </button>
+
             <Link to={"/detail/s.pinkduck_03"}>
               <div className="profileava">
                 <Avatar

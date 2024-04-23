@@ -8,12 +8,22 @@ import Post from "./post";
 import { useState, useEffect } from "react";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { getTokenFromSessionStorage } from "../Util/storageUtil";
-import { pot } from "../../data/homepost";
 import ModalLogin from "../../layout/nav/modalLogin";
-
-function TimeLine() {
+import { Button } from "react-bootstrap";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { getListPost, getPostbyId } from "../../lib/axios";
+import ModalPost from "../detail/modalPost";
+function TimeLine(props) {
+  const { setShowCreate, load, setLoad } = props;
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const [showpost, setShowPost] = useState(false);
+  const [postid, setPostId] = useState();
+  const [datapost, setDataPost] = useState();
+  const handleClickImg = async (item) => {
+    setDataPost(item);
+    setShowPost(true);
+    setPostId(item.id);
+  };
   const handleShow = () => setShow(true);
   const [token, setToken] = useState("");
   useEffect(() => {
@@ -21,14 +31,39 @@ function TimeLine() {
     setToken(storedToken);
   }, []);
   const [comments, setComments] = useState([]);
-
   const handleAddComment = (newComment) => {
     setComments([...comments, newComment]);
   };
   const name = localStorage.getItem("nickname");
   const ten2 = localStorage.getItem("name");
   const ava = localStorage.getItem("avatar");
-  console.log(ten2);
+  const [listpost, setListPost] = useState();
+  const fetchListPost = async () => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const lpost = await getListPost();
+      setListPost(lpost);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    const fetchListPost = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const lpost = await getListPost();
+        setListPost(lpost);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    const Loading = async () => {
+      const data = await getPostbyId(postid);
+      setDataPost(data);
+    };
+    fetchListPost();
+    Loading();
+  }, [load]);
   const [stos, setStos] = useState([
     {
       stoava:
@@ -66,6 +101,25 @@ function TimeLine() {
       name: "cristiano",
     },
   ]);
+  const calculateTimeFromNow = (createdAt) => {
+    const currentTime = new Date();
+    const postCreatedAt = new Date(createdAt);
+    const timeDiff = Math.round((currentTime - postCreatedAt) / 60000);
+
+    if (timeDiff < 60) {
+      if (timeDiff == 0) {
+        return "just now";
+      }
+      return `${timeDiff} minutes ago`;
+    } else if (timeDiff < 1440) {
+      const hoursDiff = Math.floor(timeDiff / 60);
+      return `${hoursDiff} hours ago`;
+    } else {
+      const daysDiff = Math.floor(timeDiff / 1440);
+      return `${daysDiff} days ago`;
+    }
+  };
+
   return (
     <div className="timeline">
       <div className="time">
@@ -78,25 +132,46 @@ function TimeLine() {
             </div>
             <NavigateNextIcon className="nextIcon" />
           </div>
-          <div className="timeline_post">
-            {pot.map((post) => (
-              <Post
-                ava={post.ava}
-                image={post.image}
-                sname={post.sname}
-                like={post.like}
-                time={post.time}
-                content={post.content}
-                postt={post.posts}
-                following={post.following}
-                followers={post.followers}
-                pos1={post.pos1}
-                pos2={post.pos2}
-                pos3={post.pos3}
-                cmt={comments}
-                onAddComment={handleAddComment}
+          <div className="d-flex justify-content-center py-4">
+            <Button
+              style={{ color: "black", backgroundColor: "transparent" }}
+              className="mx-auto button_create"
+              onClick={() => setShowCreate(true)}
+            >
+              <IoAddCircleOutline
+                style={{ fontSize: "3vh", margin: "0 5px 3px 0" }}
               />
-            ))}
+              ADD POST
+            </Button>
+          </div>
+          <div className="timeline_post">
+            {listpost
+              ?.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+              .map((post) => (
+                <>
+                  <Post
+                    ava={post.User.avatar}
+                    image={post.img}
+                    sname={post.User.nickname}
+                    like={post.likes}
+                    time={calculateTimeFromNow(post.createdAt)}
+                    content={post.title}
+                    postt="340"
+                    following="3m"
+                    followers="27.052.003"
+                    pos1=""
+                    pos2=""
+                    pos3=""
+                    cmt=""
+                    onAddComment={handleAddComment}
+                    comment={post?.Comments}
+                    data={post}
+                    handleClickImg={() => handleClickImg(post)}
+                    fetchListPost={fetchListPost}
+                  />
+                  {/* <button onClick={() => handleClickImg(post)}>hhhhh</button> */}
+                </>
+              ))}
           </div>
         </div>
         <div className="timelibe_right">
@@ -123,7 +198,16 @@ function TimeLine() {
           <Suggestion />
         </div>
       </div>
-      <ModalLogin show={show} onClick={handleClose} />
+      <ModalLogin show={show} onClick={() => setShow(true)} />
+      <ModalPost
+        showpost={showpost}
+        setShowPost={setShowPost}
+        modaldata={datapost}
+        time={calculateTimeFromNow(datapost?.createdAt)}
+        setLoad={setLoad}
+        fetchListPost={fetchListPost}
+        postid={postid}
+      />
     </div>
   );
 }

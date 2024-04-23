@@ -39,7 +39,10 @@ const ModalGroup = ({
       const isg = true;
       const avatar1 = "";
       const avatar2 = "";
-      const groupname = querygroup;
+      let groupname = querygroup;
+      if (querygroup == "" || querygroup == null) {
+        groupname = "unnamed_group";
+      }
       const response = await createBoxchat(
         host,
         partner,
